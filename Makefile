@@ -250,7 +250,7 @@ update_readme:
 
 
 freeze_ota_links:
-	sed -i "s/refs\/heads\/main/$(shell git rev-parse HEAD)/g" zigbee2mqtt/ota/*.json 
+	sed -i "s/refs\/heads\/test_downgrade/$(shell git rev-parse HEAD)/g" zigbee2mqtt/ota/*.json 
 
 
 debug:

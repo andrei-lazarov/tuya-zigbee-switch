@@ -83,7 +83,7 @@ if __name__ == "__main__":
     parser.add_argument("filename", metavar="INPUT", type=str, help="OTA filename")
     parser.add_argument("index_file", type=str, help="OTA index.json file")
     parser.add_argument("--base-url", required=False, help="Base url to use", 
-                        default="https://github.com/romasku/tuya-zigbee-switch/raw/refs/heads/main")
+                        default="https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/refs/heads/test_downgrade")
     parser.add_argument(
         "--db_file", metavar="INPUT", type=str, help="File with device db"
     )
