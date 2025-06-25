@@ -1,7 +1,7 @@
 PROJECT_NAME = tlc_switch
 
 BOARD ?= TS0012
-VERSION = 16
+VERSION = 36
 
 DEBUG = 0
 
@@ -250,7 +250,7 @@ update_readme:
 
 
 freeze_ota_links:
-	sed -i "s/refs\/heads\/main/$(shell git rev-parse HEAD)/g" zigbee2mqtt/ota/*.json 
+	sed -i "s/refs\/heads\/main_personal/$(shell git rev-parse HEAD)/g" zigbee2mqtt/ota/*.json 
 
 
 debug:
