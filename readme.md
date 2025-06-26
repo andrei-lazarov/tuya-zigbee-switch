@@ -28,10 +28,11 @@ Note that rebranded versions may have different internals and may not work. "Zig
 | [ZS-EUB_1gang](https://www.zigbee2mqtt.io/devices/ZS-EUB_1gang.html) | Moes TS0011 (1 gang switch)  | _TZ3000_hhiodade | router / end_device | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/14)  | 
 | [TS0013](https://www.zigbee2mqtt.io/devices/TS0013.html) | Moes TS0013 (3 gang switch)  | _TZ3000_qewo8dlz | router / end_device | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/14)  | 
 | [TS0012](https://www.zigbee2mqtt.io/devices/TS0012.html) | Internet search says this is Zemismart 2 gang switch, needs confirmation  | _TZ3000_zmlunnhy | router / end_device | In progress |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/19)  | 
-| [TS0011](https://www.zigbee2mqtt.io/devices/TS0011.html) | Avatto TS0011  | _TZ3000_hbxsdd6k | router / end_device | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/16)  | 
+| [LZWSM16-1](https://www.zigbee2mqtt.io/devices/LZWSM16-1.html) | Avatto TS0011  | _TZ3000_hbxsdd6k | router / end_device | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/16)  | 
 | [TS0003](https://www.zigbee2mqtt.io/devices/TS0003.html) | Moes MS-104CZ  | _TZ3000_pfc7i3kt | router | Supported |    -  | 
+| [TS0003_switch_module_2](https://www.zigbee2mqtt.io/devices/TS0003_switch_module_2.html) | Avatto TS0003  | _TZ3000_hbic3ka3 | router | WIP |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/56)  | 
 | [ZB08](https://www.zigbee2mqtt.io/devices/ZB08.html) | Girier-ZB08  | _TZ3000_ypgri8yz | router / end_device | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/37)  | 
-| [TS0004_switch_module](https://www.zigbee2mqtt.io/devices/TS0004_switch_module.html) | Avatto 4 gang switch module with N  | _TZ3000_ltt60asa | router | WIP, SUPPORT NOT CONFIRMED YET! |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/42)  | 
+| [TS0004_switch_module](https://www.zigbee2mqtt.io/devices/TS0004_switch_module.html) | Avatto 4 gang switch module with N  | _TZ3000_ltt60asa | router | WIP, check issue for current status. |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/42)  | 
 
 If you device is not supported, but it is some Tuya switch module, please check [the porting guide](./docs/porting_to_new_device.md).
 
@@ -47,7 +48,7 @@ The main driver for this project was the following factory firmware bug: if one 
 - Super fast reaction time (compared to the factory firmware)
 - 5 quick presses to reset the device
 - Power-on behavior 
-- Switch modes ON_OFF/OFF_ON/TOGGLE allowing to synchonize switch position with relay state
+- Switch modes ON_OFF/OFF_ON/TOGGLE_SIMPLE/TOGGLE_SMART_SYNC/TOGGLE_SMART_OPPOSITE allowing to synchonize switch position with relay state
 
 ## Building
 
@@ -67,6 +68,14 @@ To switch between End Device and Router follow [this guide](./docs/change_device
 To flash via wire, follow [this guide](./docs/flashing_via_wire.md)
 
 ## Changelog
+
+### v1.0.17
+
+- Fix once again power on behavior = OFF not working if toggle in pressed state during boot
+
+### v1.0.16
+
+- Add new toggle modes: TOGGLE_SMART_SYNC/TOGGLE_SMART_OPPOSITE (requires re-download of `switch_custom.js`)
 
 ### v1.0.15
 

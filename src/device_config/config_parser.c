@@ -200,7 +200,7 @@ void parse_config()
     }
   }
 
-  periferals_update();
+  periferals_init();
 
   u8 total_endpoints = switch_clusters_cnt + relay_clusters_cnt;
 
@@ -238,6 +238,16 @@ void parse_config()
     }
   }
 }
+
+
+void periferals_init()
+{
+  for (int index = 0; index < buttons_cnt; index++)
+  {
+    btn_init(&buttons[index]);
+  }
+}
+
 
 void periferals_update()
 {

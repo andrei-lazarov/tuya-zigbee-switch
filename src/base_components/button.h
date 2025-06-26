@@ -30,6 +30,7 @@ typedef struct
 }button_t;
 
 
+void btn_init(button_t *button);
 void btn_update(button_t *button);
 
 #endif

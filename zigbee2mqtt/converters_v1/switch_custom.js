@@ -458,7 +458,7 @@ const definitions = [
     },
     {
         zigbeeModel: [
-            "TS0001-Avatto-custom",
+            "TS0001-AV-CUS",
         ],
         model: "TS0001_switch_module",
         vendor: "Tuya-custom",
@@ -489,7 +489,7 @@ const definitions = [
     },
     {
         zigbeeModel: [
-            "TS0002-Avatto-custom",
+            "TS0002-AV-CUS",
         ],
         model: "TS0002_limited",
         vendor: "Tuya-custom",

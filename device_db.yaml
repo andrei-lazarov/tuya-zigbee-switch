@@ -107,7 +107,7 @@ TS0002_GIRIER:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/29 
 TS0001_AVATTO:
   name: TS0001-Avatto-custom
-  config_str: Tuya-TS0001-Avatto-custom;TS0001-Avatto-custom;BC2u;LD2;SD3u;RC0;
+  config_str: TS0001-AV-CUS;TS0001-AV-CUS;BC2u;LD2i;SD3u;RC0;
   device_type: router
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
@@ -115,12 +115,13 @@ TS0001_AVATTO:
   stock_converter_model: TS0001_switch_module
   tuya_manufacturer_names:
       - _TZ3000_4rbqgcuv
+      - Tuya-TS0001-Avatto-custom
   human_name: Avatto TS0001
   status: Supported
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/9
 TS0002_AVATTO:
   name: TS0002-Avatto-custom
-  config_str: Tuya-TS0002-Avatto-custom;TS0002-Avatto-custom;BC2u;LD2;SD3u;RC0;SD7u;RD4;
+  config_str: TS0002-AV-CUS;TS0002-AV-CUS;BC2u;LD2i;SD3u;RC0;SD7u;RD4;
   device_type: router
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
@@ -128,12 +129,13 @@ TS0002_AVATTO:
   stock_converter_model: TS0002_limited
   tuya_manufacturer_names:
       - _TZ3000_mtnpt6ws
+      - Tuya-TS0002-Avatto-custom
   human_name: Avatto TS0002
   status: Supported
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/9
 TS0004_AVATTO:
   name: TS0004-Avatto-custom
-  config_str: TS0004-AV-CUS;TS0004-AV-CUS;BC2u;LD2;SD7u;RB6;SC0u;RD4;SA0u;RC1;SA1u;RC4;
+  config_str: TS0004-AV-CUS;TS0004-AV-CUS;BC2u;LD2i;SD7u;RB6;SC0u;RD4;SA0u;RC1;SA1u;RC4;
   device_type: router
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179

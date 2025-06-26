@@ -80,6 +80,7 @@ Pin setup entries start with one of the following characters:
 - `R`: Relay  
 - `I`: Indicator LED (for switches that have per button led)
 - `i`: Change image_type for OTA (to migrate device to firmware for another device)  
+- `M`: Force momentary mode and hide this setting from Z2M. Usefull for devices that are complete switches, i.e. have buttons built-in.
 
 Next, two characters specify the pin name, e.g., `A4` or `C2`, as described in the [Tuya docs](https://developer.tuya.com/en/docs/iot/zt-series-module?id=Kaiuym8ctid7k).  
 
