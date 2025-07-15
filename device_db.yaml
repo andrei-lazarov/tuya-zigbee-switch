@@ -135,7 +135,7 @@ TS0002_AVATTO:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/9
 TS0004_AVATTO:
   name: TS0004-Avatto-custom
-  config_str: TS0004-AV-CUS;TS0004-AV-CUS;BC2u;LD2i;SD7u;RB6;SC0u;RD4;SA0u;RC1;SA1u;RC4;
+  config_str: TS0004-AV-CUS;TS0004-AV-CUS;BC2u;LD2i;SD3u;RC0;SD7u;RD4;SB6u;RC1;SA0u;RC4;
   device_type: router
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
