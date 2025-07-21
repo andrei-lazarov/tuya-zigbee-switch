@@ -37,17 +37,26 @@ status_t basic_cluster_callback_trampoline(zclIncomingAddrInfo_t *pAddrInfo, u8 
 
 s32 basic_cluster_reset_callback(void *arg)
 {
+  printf("Resetting device due to Basic cluster attribute write\r\n");
   zb_resetDevice();
   return(-1);
 }
 
 void basic_cluster_callback_attr_write_trampoline(u8 clusterId, zclWriteCmd_t *pWriteReqCmd)
 {
+  printf("Basic cluster attr write callback: clusterId: %d, numAttrs: %d\r\n", clusterId, pWriteReqCmd->numAttr);
   for (int index = 0; index < pWriteReqCmd->numAttr; index++)
   {
     basic_cluster_store_attrs_to_nv();
     if (pWriteReqCmd->attrList[index].attrID == ZCL_ATTRID_BASIC_DEVICE_CONFIG) {
+      printf("New device config in attribute:\r\n");
+      printf("%c", pWriteReqCmd->attrList[index].attrData[0]);
+      for (int i = 1; i < 256; i++) {
+        printf(",%c", pWriteReqCmd->attrList[index].attrData[i]);
+      }
+      printf("\r\n");
       device_config_write_to_nv();
+      printf("Device config written to NV\r\n");
       TL_ZB_TIMER_SCHEDULE(basic_cluster_reset_callback, NULL, 300);
     }
   }

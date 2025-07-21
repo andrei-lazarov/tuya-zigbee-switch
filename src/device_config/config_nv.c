@@ -23,6 +23,12 @@ struct
 
 void device_config_write_to_nv()
 {
+  printf("Writing config to NV: %s\r\n", config.data);
+  for (int i = 0; i < 256; i++)
+  {
+    printf("%c", config.data[i]);
+  }
+    printf("\r\n");
   nv_flashWriteNew(1, NV_MODULE_ZCL, NV_ITEM_ZCL_DEVICE_CONFIG, sizeof(config.data), (u8 *)config.data);
 }
 
@@ -33,12 +39,14 @@ void device_config_remove_from_nv()
 
 void device_config_read_from_nv()
 {
+  printf("Reading config from NV...\r\n");
   nv_sts_t st = nv_flashReadNew(1, NV_MODULE_ZCL, NV_ITEM_ZCL_DEVICE_CONFIG, sizeof(config.data), (u8 *)config.data);
 
   if (st != NV_SUCC)
   {
+    printf("Failed to read config from NV, using default\r\n");
     memcpy(config.data, default_config_data, sizeof(default_config_data));
   }
   config.size = strlen(config.data);
-  printf("Loaded config %s\r\n", config.data);
+  printf("Read config %s\r\n", config.data);
 }

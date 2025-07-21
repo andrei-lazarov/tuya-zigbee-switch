@@ -23,6 +23,7 @@ void zigbee_endpoint_register_self(zigbee_endpoint *endpoint)
 
 void zigbee_endpoint_add_cluster(zigbee_endpoint *endpoint, u8 server, u16 cluster_type)
 {
+  printf("zigbee_endpoint_add_cluster\r\n");
   if (server)
   {
     u8 index = endpoint->simple_description.app_in_cluster_count;

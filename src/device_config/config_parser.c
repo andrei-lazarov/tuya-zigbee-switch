@@ -63,7 +63,9 @@ void onResetClicked(void *_)
 
 void parse_config()
 {
+  printf("parse_config\r\n");
   device_config_read_from_nv();
+  printf("Parsing config: %s\r\n", config.data);
   char *cursor = config.data;
 
   const char *zb_manufacturer = extractNextEntry(&cursor);
@@ -169,6 +171,7 @@ void parse_config()
     if (entry[0] == 'R')
     {
       GPIO_PinTypeDef pin = parsePin(entry + 1);
+      printf("Relay %d pin %d\r\n", relays_cnt, pin);
       init_gpio_output(pin);
 
       relays[relays_cnt].pin     = pin;
@@ -200,37 +203,53 @@ void parse_config()
     }
   }
 
+  printf("Parsed config \r\n");
   periferals_init();
+  printf("Periferals done, registering endpoints...\r\n");
 
   u8 total_endpoints = switch_clusters_cnt + relay_clusters_cnt;
+  printf("total_endpoints = switch_clusters_cnt + relay_clusters_cnt (%d = %d + %d)\r\n", total_endpoints, switch_clusters_cnt, relay_clusters_cnt);
 
+  printf("Initializing endpoints:");
   for (int index = 0; index < total_endpoints; index++)
   {
+    printf(" %d", index);
     endpoints[index].index = index + 1;
     zigbee_endpoint_init(&endpoints[index]);
   }
 
+  printf("\r\nAdding clusters to endpoints...\r\n");
   basic_cluster_add_to_endpoint(&basic_cluster, &endpoints[0]);
+  printf("Adding OTA cluster to endpoint %d\r\n", 0);
   zigbee_endpoint_add_cluster(&endpoints[0], 0, ZCL_CLUSTER_OTA);
 
   for (int index = 0; index < switch_clusters_cnt; index++)
   {
+    printf("Adding switch cluster %d to endpoint %d\r\n", index, index);
     switch_cluster_add_to_endpoint(&switch_clusters[index], &endpoints[index]);
   }
   for (int index = 0; index < relay_clusters_cnt; index++)
   {
+    printf("Adding relay cluster %d to endpoint %d\r\n", index, switch_clusters_cnt + index);
     relay_cluster_add_to_endpoint(&relay_clusters[index], &endpoints[switch_clusters_cnt + index]);
     // Group cluster is stateless, safe to add to multiple endpoints
+    printf("Adding group cluster to endpoint %d\r\n", switch_clusters_cnt + index);
     group_cluster_add_to_endpoint(&group_cluster, &endpoints[switch_clusters_cnt + index]);
   }
 
+  printf("Registering...\r\n");
   for (int index = 0; index < total_endpoints; index++)
   {
+    printf("Registering endpoint %d\r\n", index);
     zigbee_endpoint_register_self(&endpoints[index]);
   }
+  
+  printf("Endpoints registered\r\n");
+
   cursor--;
   while (cursor != config.data)
   {
+    // printf("in loop %s\r\n", cursor);
     cursor--;
     if (*cursor == '\0')
     {
@@ -242,6 +261,7 @@ void parse_config()
 
 void periferals_init()
 {
+  printf("periferals_init\r\n");
   for (int index = 0; index < buttons_cnt; index++)
   {
     btn_init(&buttons[index]);

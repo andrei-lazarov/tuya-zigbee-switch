@@ -37,10 +37,14 @@ void update_relay_clusters() {
 
 void relay_cluster_add_to_endpoint(zigbee_relay_cluster *cluster, zigbee_endpoint *endpoint)
 {
+  printf("relay_cluster_add_to_endpoint START\r\n");
   relay_cluster_by_endpoint[endpoint->index] = cluster;
   cluster->endpoint = endpoint->index;
   relay_cluster_load_attrs_from_nv(cluster);
-
+  printf("cluster: endpoint, startup_mode, indicator_led_mode\r\n");
+  printf("cluster: %d, %d, %d\r\n", cluster->endpoint, cluster->startup_mode, cluster->indicator_led_mode);
+  printf("relay: pin, off_pin, on_high, on\r\n");
+  printf("relay: %d, %d, %d, %d\r\n", cluster->relay->pin, cluster->relay->off_pin, cluster->relay->on_high, cluster->relay->on);
   cluster->relay->callback_param = cluster;
   cluster->relay->on_change      = (ev_relay_callback_t)relay_cluster_on_relay_change;
 
@@ -63,6 +67,7 @@ void relay_cluster_add_to_endpoint(zigbee_relay_cluster *cluster, zigbee_endpoin
   info->attrTbl             = cluster->attr_infos;
   info->clusterRegisterFunc = zcl_onOff_register;
   info->clusterAppCb        = relay_cluster_callback_trampoline;
+  printf("relay_cluster_add_to_endpoint END\r\n");
 }
 
 status_t relay_cluster_callback_trampoline(zclIncomingAddrInfo_t *pAddrInfo, u8 cmdId, void *cmdPayload)
@@ -162,6 +167,7 @@ void relay_cluster_report(zigbee_relay_cluster *cluster)
 
 void relay_cluster_on_relay_change(zigbee_relay_cluster *cluster, u8 state)
 {
+    printf("relay_cluster_on_relay_change: %d\r\n", state);
   if (cluster->startup_mode == ZCL_START_UP_ONOFF_SET_ONOFF_TOGGLE ||
       cluster->startup_mode == ZCL_START_UP_ONOFF_SET_ONOFF_TO_PREVIOUS)
   {
@@ -207,6 +213,7 @@ zigbee_relay_cluster_config nv_config_buffer;
 
 void relay_cluster_store_attrs_to_nv(zigbee_relay_cluster *cluster)
 {
+    printf("relay_cluster_store_attrs_to_nv\r\n");
   nv_config_buffer.on_off             = cluster->relay->on;
   nv_config_buffer.startup_mode       = cluster->startup_mode;
   nv_config_buffer.indicator_led_mode = cluster->indicator_led_mode;
@@ -217,6 +224,7 @@ void relay_cluster_store_attrs_to_nv(zigbee_relay_cluster *cluster)
 
 void relay_cluster_load_attrs_from_nv(zigbee_relay_cluster *cluster)
 {
+  printf("relay_cluster_load_attrs_from_nv\r\n");
   nv_sts_t st = nv_flashReadNew(1, NV_MODULE_ZCL, NV_ITEM_ZCL_RELAY_CONFIG(cluster->endpoint), sizeof(zigbee_relay_cluster_config), (u8 *)&nv_config_buffer);
 
   if (st != NV_SUCC)
@@ -229,6 +237,7 @@ void relay_cluster_load_attrs_from_nv(zigbee_relay_cluster *cluster)
 
 void relay_cluster_handle_startup_mode(zigbee_relay_cluster *cluster)
 {
+    printf("relay_cluster_handle_startup_mode\r\n");
   nv_sts_t st = nv_flashReadNew(1, NV_MODULE_ZCL, NV_ITEM_ZCL_RELAY_CONFIG(cluster->endpoint), sizeof(zigbee_relay_cluster_config), (u8 *)&nv_config_buffer);
 
   if (st != NV_SUCC)
