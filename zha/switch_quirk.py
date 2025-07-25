@@ -91,11 +91,18 @@ CONFIGS = [
     "Tuya-TS0002-custom;TS0002-custom;BD2u;LC2;SB5u;RC4;SB4u;RC3;",
     "TS0001-AV-CUS;TS0001-AV-CUS;BC2u;LD2i;SD3u;RC0;",
     "TS0002-AV-CUS;TS0002-AV-CUS;BC2u;LD2i;SD3u;RC0;SD7u;RD4;",
+<<<<<<< HEAD
     "TS0004-AV-CUS;TS0004-AV-CUS;BC2u;LD2i;SD3u;RC0;SD7u;RD4;SB6u;RC1;SA0u;RC4;",
+=======
+    "TS0003-AV-CUS;TS0003-AV-CUS;BC2u;LD2i;SD3u;RC0;SD7u;RD4;SB6u;RC1;",
+    "TS0004-AV-CUS;TS0004-AV-CUS;BC2u;LD2i;SD7u;RB6;SC0u;RD4;SA0u;RC1;SA1u;RC4;",
+>>>>>>> fix_config_length
     "Moes-2-gang;Moes-2-gang;SB6u;SC4u;RB5;RB4;ID3;IC0;M;",
     "Moes-2-gang;Moes-2-gang-ED;SB6u;SC4u;RB5;RB4;ID3;IC0;M;",
+    "Bseed-2-gang;Bseed-2-gang;SB6u;SA1u;RD3;RC0;IC2;IB4;M;",
     "Bseed-2-gang;Bseed-2-gang-ED;SB6u;SA1u;RD3;RC0;IC2;IB4;M;",
-    "Bseed-2-gang;Bseed-2-gang-ED;SB6u;SA1u;RD3;RC0;IC2;IB4;M;",
+    "Bseed-2-gang-2;Bseed-2-gang-2;SB5u;SD4u;RC0B6;RA1D7;ID2;ID3;LC3;M;",
+    "Bseed-2-gang-2;Bseed-2-gang-2-ED;SB5u;SD4u;RC0B6;RA1D7;ID2;ID3;LC3;M;",
     "TS0012-Avatto;TS0012-avatto;BB4f;LB5;SC0f;SC3f;RC2;RC4;",
     "TS0012-Avatto;TS0012-avatto-ED;BB4f;LB5;SC0f;SC3f;RC2;RC4;",
     "WHD02-Aubess;WHD02-Aubess;BC4u;LD2;SB4u;RB5;",
@@ -111,10 +118,17 @@ CONFIGS = [
     "TS0011-Avatto;TS0011-avatto;BB4u;LB5;SC0u;RC2;",
     "TS0011-Avatto;TS0011-avatto-ED;BB4u;LB5;SC0u;RC2;",
     "Tuya-TS0003-custom;TS0003-custom;BD3u;SC1u;SD7u;SC3u;RB5;RD4;RB4;",
+<<<<<<< HEAD
     "Tuya-TS0003-Avatto-custom;TS0003-Avatto-custom;BC2u;LD2;SD3u;RC0;SD7u;RD4;SB6u;RC1;",
     "Girier-ZB08-custom;ZB08-custom;BA0u;LD7;SC2u;RC0;SC3u;RB4;SD2u;RB5;",
     "Girier-ZB08-custom-ED;ZB08-custom-ED;BA0u;LD7;SC2u;RC0;SC3u;RB4;SD2u;RB5;",
     "TS0004-Avv;TS0004-Avv;BB5u;LC1;SB4u;RC0;SD2u;RC4;SC3u;RD4;SC2u;RD7;",
+=======
+    "Girier-ZB08-custom;ZB08-custom;BA0u;LD7;SC2u;RC0;SC3u;RB4;SD2u;RB5;",
+    "Girier-ZB08-custom-ED;ZB08-custom-ED;BA0u;LD7;SC2u;RC0;SC3u;RB4;SD2u;RB5;",
+    "TS0004-Avv;TS0004-Avv;BB5u;LC1;SB4u;RC0;SD2u;RC4;SC3u;RD4;SC2u;RD7;",
+    "Tuya-TS0004-custom;TS0004-custom;BB6u;LB1;SC1u;RB7;SC2u;RB5;SC3u;RB4;SD2u;RC4;",
+>>>>>>> fix_config_length
     "Avatto-3-touch;Avatto-3-touch;LB5;SD3u;RC2;SD7u;RC3;SD4u;RD2;M;",
 ]
 
