@@ -17,9 +17,6 @@ const u8  multistate_out_of_service = 0;
 const u8  multistate_flags          = 0;
 const u16 multistate_num_of_states  = 3;
 
-u8  level_active                     = 0;
-u8  level_updown                     = 0;
-
 
 #define MUTLISTATE_NOT_PRESSED    0
 #define MUTLISTATE_PRESS          1
@@ -65,12 +62,21 @@ void switch_cluster_add_to_endpoint(zigbee_switch_cluster *cluster, zigbee_endpo
   cluster->button->on_multi_press = (ev_button_multi_press_callback_t)switch_cluster_on_button_multi_press;
   cluster->button->callback_param = cluster;
 
+//  TL_SETSTRUCTCONTENT(cluster->move_level, 0);
   SETUP_ATTR(0, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_TYPE, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ, cluster->mode);
   SETUP_ATTR(1, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_ACTIONS, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->action);
   SETUP_ATTR(2, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_MODE, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->mode);
   SETUP_ATTR(3, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_RELAY_MODE, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->relay_mode);
   SETUP_ATTR(4, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_RELAY_INDEX, ZCL_DATA_TYPE_UINT8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->relay_index);
   SETUP_ATTR(5, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_LONG_PRESS_DUR, ZCL_DATA_TYPE_UINT16, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->button->long_press_duration_ms);
+
+/*
+  SETUP_ATTR(6, LEVEL_MOVE_UP, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->move_level->moveMode);
+  SETUP_ATTR(7, 10, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->move_level->rate);
+  SETUP_ATTR(8, 0, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ, cluster->move_level->optPresent);
+  SETUP_ATTR(9, 0, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ, cluster->move_level->optionsMask);
+  SETUP_ATTR(10, 0, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ, cluster->move_level->optionsOverride);
+*/
 
 
   // Configuration
@@ -152,7 +158,6 @@ void switch_cluster_on_button_press(zigbee_switch_cluster *cluster)
         break;
       }
     }
-  }
 
 
   if (zb_isDeviceJoinedNwk())
@@ -195,6 +200,7 @@ void switch_cluster_on_button_press(zigbee_switch_cluster *cluster)
       break;
     }
   }
+  }
 }
 
 void switch_cluster_on_button_release(zigbee_switch_cluster *cluster)
@@ -205,13 +211,18 @@ void switch_cluster_on_button_release(zigbee_switch_cluster *cluster)
   switch_cluster_report_action(cluster);
 
   if (
-    
-    (cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_TOGGLE) ||
-    (cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_MOMENTARY) &&
-    !level_active
+    (
+      (cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_TOGGLE) ||
+      (cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_MOMENTARY)
+    ) &&
+      (cluster->button->long_pressed == false)
     )
   {
-    if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_RISE)
+    if 
+    (
+      (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_RISE) ||
+      (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE)
+    )
     {
       switch (cluster->action)
       {
@@ -242,10 +253,9 @@ void switch_cluster_on_button_release(zigbee_switch_cluster *cluster)
     dstEpInfo.profileId   = HA_PROFILE_ID;
     dstEpInfo.dstAddrMode = APS_DSTADDR_EP_NOTPRESETNT;
 
-    if (level_active)
+    if (cluster->button->long_pressed == true)
     {
       zcl_level_stopWithOnOffCmd(cluster->endpoint, &dstEpInfo, FALSE, NULL);
-      level_active = 0;
       return;
     }
 
@@ -258,10 +268,10 @@ void switch_cluster_on_button_release(zigbee_switch_cluster *cluster)
       zcl_onOff_onCmd(cluster->endpoint, &dstEpInfo, FALSE);
       break;
     case ZCL_ONOFF_CONFIGURATION_SWITCH_ACTION_TOGGLE_SIMPLE:
-      if (cluster->mode != ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_MOMENTARY)
-      {
+//      if (cluster->mode != ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_MOMENTARY)
+//      {
         zcl_onOff_toggleCmd(cluster->endpoint, &dstEpInfo, FALSE);
-      }
+//      }
       break;
     case ZCL_ONOFF_CONFIGURATION_SWITCH_ACTION_TOGGLE_SMART_SYNC:
       if (cluster->mode != ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_MOMENTARY)
@@ -321,11 +331,21 @@ void switch_cluster_on_button_long_press(zigbee_switch_cluster *cluster)
     dstEpInfo.profileId   = HA_PROFILE_ID;
     dstEpInfo.dstAddrMode = APS_DSTADDR_EP_NOTPRESETNT;
 
-    if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE)
+    if (
+        (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE) ||
+        (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_DETACHED)
+      )
     {
-      zcl_level_moveCmd(cluster->endpoint, &dstEpInfo, FALSE, level_updown ? LEVEL_MOVE_DOWN : LEVEL_MOVE_UP );
-      level_active = 1;
-      level_updown = !level_updown;
+      if (cluster->move_level->moveMode == LEVEL_MOVE_DOWN)
+      {
+        zcl_level_moveCmd(cluster->endpoint, &dstEpInfo, FALSE, cluster->move_level);
+        cluster->move_level->moveMode = LEVEL_MOVE_UP;
+      }
+      else
+      {
+        zcl_level_moveCmd(cluster->endpoint, &dstEpInfo, FALSE, cluster->move_level);
+        cluster->move_level->moveMode = LEVEL_MOVE_DOWN;
+      }
     }
   }
 
