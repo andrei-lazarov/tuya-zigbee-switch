@@ -105,7 +105,7 @@ void switch_cluster_add_to_endpoint(zigbee_switch_cluster *cluster, zigbee_endpo
   info_multistate->clusterAppCb        = NULL;
 
   // Output Level for other devices
-  zigbee_endpoint_add_cluster(endpoint, 1, ZCL_CLUSTER_GEN_LEVEL_CONTROL);
+  zigbee_endpoint_add_cluster(endpoint, 0, ZCL_CLUSTER_GEN_LEVEL_CONTROL);
   zcl_specClusterInfo_t *info_level = zigbee_endpoint_reserve_info(endpoint);
   info_level->clusterId           = ZCL_CLUSTER_GEN_LEVEL_CONTROL;
   info_level->manuCode            = MANUFACTURER_CODE_NONE;
