@@ -279,7 +279,7 @@ void switch_cluster_on_button_release(zigbee_switch_cluster *cluster)
 
     if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE)
     {
-      zcl_level_stopCmd(cluster->endpoint, &dstEpInfo, FALSE, NULL);
+      zcl_level_stopWithOnOffCmd(cluster->endpoint, &dstEpInfo, FALSE, NULL);
     }
   }
 }
@@ -314,7 +314,7 @@ void switch_cluster_on_button_long_press(zigbee_switch_cluster *cluster)
 
     if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE)
     {
-      zcl_level_moveCmd(cluster->endpoint, &dstEpInfo, FALSE, LEVEL_MOVE_UP);
+      zcl_level_moveWithOnOffCmd(cluster->endpoint, &dstEpInfo, FALSE, LEVEL_MOVE_UP);
     }
   }
 
