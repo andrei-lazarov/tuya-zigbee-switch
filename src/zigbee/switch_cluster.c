@@ -103,6 +103,16 @@ void switch_cluster_add_to_endpoint(zigbee_switch_cluster *cluster, zigbee_endpo
   info_multistate->attrTbl             = cluster->multistate_attr_infos;
   info_multistate->clusterRegisterFunc = zcl_multistate_input_register;
   info_multistate->clusterAppCb        = NULL;
+
+  // Output Level for other devices
+  zigbee_endpoint_add_cluster(endpoint, 1, ZCL_CLUSTER_GEN_LEVEL_CONTROL);
+  zcl_specClusterInfo_t *info_level = zigbee_endpoint_reserve_info(endpoint);
+  info_level->clusterId           = ZCL_CLUSTER_GEN_LEVEL_CONTROL;
+  info_level->manuCode            = MANUFACTURER_CODE_NONE;
+  info_level->attrNum             = 0;
+  info_level->attrTbl             = NULL;
+  info_level->clusterRegisterFunc = zcl_level_register;
+  info_level->clusterAppCb        = NULL;
 }
 
 void switch_cluster_on_button_press(zigbee_switch_cluster *cluster)
@@ -266,6 +276,11 @@ void switch_cluster_on_button_release(zigbee_switch_cluster *cluster)
       }
       break;
     }
+
+    if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE)
+    {
+      zcl_level_stopCmd(cluster->endpoint, &dstEpInfo, FALSE, NULL);
+    }
   }
 }
 
@@ -287,6 +302,22 @@ void switch_cluster_on_button_long_press(zigbee_switch_cluster *cluster)
   {
     relay_cluster_toggle(relay_cluster);
   }
+
+
+  if (zb_isDeviceJoinedNwk())
+  {
+    epInfo_t dstEpInfo;
+    TL_SETSTRUCTCONTENT(dstEpInfo, 0);
+
+    dstEpInfo.profileId   = HA_PROFILE_ID;
+    dstEpInfo.dstAddrMode = APS_DSTADDR_EP_NOTPRESETNT;
+
+    if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE)
+    {
+      zcl_level_moveCmd(cluster->endpoint, &dstEpInfo, FALSE, LEVEL_MOVE_UP);
+    }
+  }
+
 }
 
 void switch_cluster_on_button_multi_press(zigbee_switch_cluster *cluster, u8 press_count)

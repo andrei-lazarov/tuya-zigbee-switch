@@ -199,21 +199,6 @@
     ]
   },
   {
-    "fileName": "1141-aa09-ffffffff-tlc_switch-forced.zigbee",
-    "fileVersion": 4294967295,
-    "fileSize": 164802,
-    "url": "https://github.com/clumsy-stefan/tuya-zigbee-switch/raw/4d734ef926766bd92eca47d73153a580a2e9bb0d/bin/TS0004_AVATTO/1141-aa09-ffffffff-tlc_switch-forced.zigbee",
-    "imageType": 43529,
-    "manufacturerCode": 4417,
-    "sha512": "f0d910cada2e4959d773b88b8331ad2e128a0e8d21486eae2907fafd4ae7880132d07ac5753c35cf42e4b3a4c9b540d2e4380c0cddad7af143165e4bf86dfc6e",
-    "otaHeaderString": "Telink Zigbee OTA\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-    "manufacturerName": [
-      "_TZ3000_5ajpkyq6",
-      "Tuya-TS0004-Avatto-custom",
-      "TS0004-AV-CUS"
-    ]
-  },
-  {
     "fileName": "1141-aa14-ffffffff-tlc_switch-forced.zigbee",
     "fileVersion": 4294967295,
     "fileSize": 164802,
@@ -366,6 +351,21 @@
     "manufacturerName": [
       "_TZ3000_zmlunnhy",
       "Zemi-2-gang"
+    ]
+  },
+  {
+    "fileName": "1141-aa09-ffffffff-tlc_switch-forced.zigbee",
+    "fileVersion": 4294967295,
+    "fileSize": 165570,
+    "url": "git@github.com:clumsy-stefan/tuya-zigbee-switch.git/raw/refs/heads/add_zcl_move/bin/TS0004_AVATTO/1141-aa09-ffffffff-tlc_switch-forced.zigbee",
+    "imageType": 43529,
+    "manufacturerCode": 4417,
+    "sha512": "36b0d75f99f0096f1bd0fbc943d2afd31442d5c105214adefd1777e724a8683b48178e2b5eab52c324e5ac4a37fa2cc66a67d84dba46cba0684c3e67d13864a2",
+    "otaHeaderString": "Telink Zigbee OTA\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+    "manufacturerName": [
+      "_TZ3000_5ajpkyq6",
+      "Tuya-TS0004-Avatto-custom",
+      "TS0004-AV-CUS"
     ]
   }
 ]

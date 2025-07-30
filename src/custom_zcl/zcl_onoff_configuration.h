@@ -32,6 +32,7 @@
 #define ZCL_ONOFF_CONFIGURATION_RELAY_MODE_DETACHED                 0x00
 #define ZCL_ONOFF_CONFIGURATION_RELAY_MODE_RISE                     0x01
 #define ZCL_ONOFF_CONFIGURATION_RELAY_MODE_LONG                     0x02
+#define ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE                     0x03
 
 
 status_t zcl_onoff_configuration_register(u8 endpoint, u16 manuCode, u8 attrNum, const zclAttrInfo_t attrTbl[], cluster_forAppCb_t cb);
