@@ -17,8 +17,8 @@ const u8  multistate_out_of_service = 0;
 const u8  multistate_flags          = 0;
 const u16 multistate_num_of_states  = 3;
 
-u8  move_active                     = 0;
-u8  move_updown                     = 0;
+u8  level_active                     = 0;
+u8  level_updown                     = 0;
 
 
 #define MUTLISTATE_NOT_PRESSED    0
@@ -128,8 +128,7 @@ void switch_cluster_on_button_press(zigbee_switch_cluster *cluster)
   switch_cluster_report_action(cluster);
 
   if (
-    cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_TOGGLE ||
-    cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_MOMENTARY
+    cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_TOGGLE
     )
   {
     if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_RISE)
@@ -206,7 +205,10 @@ void switch_cluster_on_button_release(zigbee_switch_cluster *cluster)
   switch_cluster_report_action(cluster);
 
   if (
-    (cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_TOGGLE) && !move_active
+    
+    (cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_TOGGLE) ||
+    (cluster->mode == ZCL_ONOFF_CONFIGURATION_SWITCH_TYPE_MOMENTARY) &&
+    !level_active
     )
   {
     if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_RISE)
@@ -240,10 +242,10 @@ void switch_cluster_on_button_release(zigbee_switch_cluster *cluster)
     dstEpInfo.profileId   = HA_PROFILE_ID;
     dstEpInfo.dstAddrMode = APS_DSTADDR_EP_NOTPRESETNT;
 
-    if ((cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE) && move_active)
+    if (level_active)
     {
       zcl_level_stopWithOnOffCmd(cluster->endpoint, &dstEpInfo, FALSE, NULL);
-      move_active = 0;
+      level_active = 0;
       return;
     }
 
@@ -321,9 +323,9 @@ void switch_cluster_on_button_long_press(zigbee_switch_cluster *cluster)
 
     if (cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_MOVE)
     {
-      zcl_level_moveCmd(cluster->endpoint, &dstEpInfo, FALSE, move_updown ? LEVEL_MOVE_DOWN : LEVEL_MOVE_UP );
-      move_active = 1;
-      move_updown = !move_updown;
+      zcl_level_moveCmd(cluster->endpoint, &dstEpInfo, FALSE, level_updown ? LEVEL_MOVE_DOWN : LEVEL_MOVE_UP );
+      level_active = 1;
+      level_updown = !level_updown;
     }
   }
 
