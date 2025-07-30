@@ -114,6 +114,7 @@ CONFIGS = [
     "TS0011-Avatto;TS0011-avatto;BB4u;LB5;SC0u;RC2;",
     "TS0011-Avatto;TS0011-avatto-ED;BB4u;LB5;SC0u;RC2;",
     "Tuya-TS0003-custom;TS0003-custom;BD3u;SC1u;SD7u;SC3u;RB5;RD4;RB4;",
+    "TS0003-3CH-cus;TS0003-3CH-cus;BC3u;LC2i;SD7u;RD2;SB4u;RD3;SB5u;RC0;",
     "Girier-ZB08-custom;ZB08-custom;BA0u;LD7;SC2u;RC0;SC3u;RB4;SD2u;RB5;",
     "Girier-ZB08-custom-ED;ZB08-custom-ED;BA0u;LD7;SC2u;RC0;SC3u;RB4;SD2u;RB5;",
     "TS0004-Avv;TS0004-Avv;BB5u;LC1;SB4u;RC0;SD2u;RC4;SC3u;RD4;SC2u;RD7;",
