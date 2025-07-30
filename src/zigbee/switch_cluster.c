@@ -62,22 +62,12 @@ void switch_cluster_add_to_endpoint(zigbee_switch_cluster *cluster, zigbee_endpo
   cluster->button->on_multi_press = (ev_button_multi_press_callback_t)switch_cluster_on_button_multi_press;
   cluster->button->callback_param = cluster;
 
-//  TL_SETSTRUCTCONTENT(cluster->move_level, 0);
   SETUP_ATTR(0, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_TYPE, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ, cluster->mode);
   SETUP_ATTR(1, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_ACTIONS, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->action);
   SETUP_ATTR(2, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_MODE, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->mode);
   SETUP_ATTR(3, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_RELAY_MODE, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->relay_mode);
   SETUP_ATTR(4, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_RELAY_INDEX, ZCL_DATA_TYPE_UINT8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->relay_index);
   SETUP_ATTR(5, ZCL_ATTRID_ONOFF_CONFIGURATION_SWITCH_LONG_PRESS_DUR, ZCL_DATA_TYPE_UINT16, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->button->long_press_duration_ms);
-
-/*
-  SETUP_ATTR(6, LEVEL_MOVE_UP, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->move_level->moveMode);
-  SETUP_ATTR(7, 10, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE, cluster->move_level->rate);
-  SETUP_ATTR(8, 0, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ, cluster->move_level->optPresent);
-  SETUP_ATTR(9, 0, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ, cluster->move_level->optionsMask);
-  SETUP_ATTR(10, 0, ZCL_DATA_TYPE_ENUM8, ACCESS_CONTROL_READ, cluster->move_level->optionsOverride);
-*/
-
 
   // Configuration
   zigbee_endpoint_add_cluster(endpoint, 1, ZCL_CLUSTER_GEN_ON_OFF_SWITCH_CONFIG);

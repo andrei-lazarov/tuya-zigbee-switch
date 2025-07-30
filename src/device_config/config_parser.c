@@ -20,6 +20,16 @@ network_indicator_t network_indicator =
   .manual_state_when_connected = 1,
 };
 
+
+move_t move_level =
+{
+  .moveMode = LEVEL_MOVE_UP,
+  .rate = 20,
+  .optPresent = 0,
+  .optionsMask =0,
+  .optionsOverride = 0,
+};
+
 led_t leds[5];
 u8    leds_cnt = 0;
 
@@ -162,6 +172,7 @@ void parse_config()
       switch_clusters[switch_clusters_cnt].relay_mode  = ZCL_ONOFF_CONFIGURATION_RELAY_MODE_RISE;
       switch_clusters[switch_clusters_cnt].relay_index = switch_clusters_cnt + 1;
       switch_clusters[switch_clusters_cnt].button      = &buttons[buttons_cnt];
+      switch_clusters[switch_clusters_cnt].move_level  = &move_level;
 
       buttons_cnt++;
       switch_clusters_cnt++;
