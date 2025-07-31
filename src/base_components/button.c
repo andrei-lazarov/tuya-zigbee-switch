@@ -47,7 +47,7 @@ void btn_update_debounced(button_t *button, u8 is_pressed)
 
   if (!button->pressed && is_pressed)
   {
-    printf("Press detected\r\n");
+    printf("Press detectedd\r\n");
     button->pressed_at_ms = now;
     if (button->on_press != NULL)
     {

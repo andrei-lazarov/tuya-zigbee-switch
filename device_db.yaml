@@ -162,7 +162,7 @@ TS0003_AVATTO:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/56
 TS0004_AVATTO:
   name: TS0004-Avatto-custom
-  config_str: TS0004-AV-CUS;TS0004-AV-CUS;BC2u;LD2i;SD7u;RB6;SC0u;RD4;SA0u;RC1;SA1u;RC4;
+  config_str: TS0004-AVT;TS0004-AVT;BC2u;LD2i;SD7u;RB6;SC0u;RD4;SA0u;RC1;SA1u;RC4;
   device_type: router
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
@@ -174,7 +174,7 @@ TS0004_AVATTO:
   old_zb_models:
     - TS0004-Avatto-custom
   human_name: Avatto TS0004
-  status: Supported
+  status: Supportedd
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/9
 MOES_2_GANG_SWITCH:
   name: Moes-2-gang
