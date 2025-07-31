@@ -634,7 +634,7 @@ const definitions = [
     },
     {
         zigbeeModel: [
-            "TS0004-AV-CUS",
+            "TS0004-AVT",
             "TS0004-Avatto-custom",
         ],
         model: "TS0004_switch_module_2",
