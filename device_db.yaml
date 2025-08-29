@@ -16,7 +16,7 @@ TS0012:
   status: Supported
 WHD02:
   config_str: skueekg3;WHD02-custom;BB4u;LD3;SB5u;RB1;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4407
   tuya_image_type: 524
   firmware_image_type: 43522
@@ -28,7 +28,7 @@ WHD02:
   status: Supported
 TS0002:
   config_str: 01gpyda5;TS0002-custom;BD2u;LC2;SB5u;SB4u;RC4;RC3;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43523
@@ -41,7 +41,7 @@ TS0002:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/6
 TS0002_OXT:
   config_str: bvrlqyj7;TS0002-OXT-CUS;BD2u;LC0;SB4u;SB5u;RC2;RC3;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43547
@@ -68,7 +68,7 @@ TS0011:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/4
 TS0001:
   config_str: tqlv4ug4;TS0001-custom;BD2u;LC0;SB4u;RC2;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43525
@@ -81,7 +81,7 @@ TS0001:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/6
 TS0002_GIRIER:
   config_str: zmy4lslw;TS0002-custom;BD2u;LC2;SB5u;RC4;SB4u;RC3;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43526
@@ -96,7 +96,7 @@ TS0002_GIRIER:
   store: https://www.aliexpress.com/item/1005006084763437.html
 TS0001_AVATTO:
   config_str: 4rbqgcuv;TS0001-AVB;BC2u;LD2i;SD3u;RC0;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43527
@@ -117,7 +117,7 @@ TS0001_AVATTO:
   store: https://www.aliexpress.com/item/1005007247647375.html
 TS0002_AVATTO:
   config_str: mtnpt6ws;TS0002-AVB;BC2u;LD2i;SD3u;RC0;SD7u;RD4;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43528
@@ -138,7 +138,7 @@ TS0002_AVATTO:
   store: https://www.aliexpress.com/item/1005007247647375.html
 TS0003_AVATTO:
   config_str: hbic3ka3;TS0003-AVB;BC2u;LD2i;SD3u;RC0;SD7u;RD4;SB6u;RC1;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43543
@@ -161,7 +161,7 @@ TS0004_AVATTO:
   config_str: 5ajpkyq6;TS0004-AVB;BC2u;LD2i;SD3u;RC0;SD7u;RD4;SB6u;RC1;SA0u;RC4;
   alt_config_str:
   - 5ajpkyq6;TS0004-AVB;BC2u;LD2i;SD7u;RB6;SC0u;RD4;SA0u;RC1;SA1u;RC4;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43529
@@ -302,7 +302,7 @@ MOES_3_GANG_SWITCH:
   store: https://www.aliexpress.com/item/1005005178075186.html
 WHD02_2:
   config_str: skueekg3;WHD02-custom;BB1u;LB4;SD2u;RD3;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43535
@@ -316,7 +316,7 @@ WHD02_2:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/24
 WHD02_3:
   config_str: skueekg3;WHD02-custom;BB1u;LB4;SD2u;RD3;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 518
   firmware_image_type: 43541
@@ -364,7 +364,7 @@ TS0011_AVATTO:
   store: https://www.aliexpress.com/item/1005007247647375.html
 TS0003:
   config_str: pfc7i3kt;TS0003-custom;BD3u;SC1u;SD7u;SC3u;RB5;RD4;RB4;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43538
@@ -377,7 +377,7 @@ TS0003:
   github_issue: null
 TS0003_BSEED:
   config_str: 7aqaupa9;TS0003-BS;SC3u;SB7u;SB5u;RC2;RB4;RC0;LA0i;M;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43549
@@ -390,7 +390,7 @@ TS0003_BSEED:
   store: https://www.aliexpress.com/item/1005003475686409.html
 TS0003_IHS:
   config_str: mhhxxjrs;TS0003-IHS;BC3u;LC2i;SD7u;RD2;SB4u;RD3;SB5u;RC0;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43546
@@ -408,7 +408,7 @@ TS0003_IHS:
   store: https://www.aliexpress.com/item/1005008107698143.html
 TS0004_IHS:
   config_str: knoj8lpk;TS0004-IHS;BC3u;LC2i;SB5u;RD2;SB4u;RD3;SD7u;RC0;SD4u;RC1;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43548
@@ -441,7 +441,7 @@ TS0013_GIRIER:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/37
 TS0004_AVATTO_NEUTRAL:
   config_str: ltt60asa;TS0004-Avv;BB5u;LC1;SB4u;RC0;SD2u;RC4;SC3u;RD4;SC2u;RD7;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43540
@@ -455,7 +455,7 @@ TS0004_AVATTO_NEUTRAL:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/42
 TS0004:
   config_str: mmkbptmx;TS0004-custom;BB6u;LB1;SC1u;RB7;SC2u;RB5;SC3u;RB4;SD2u;RC4;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43545
@@ -470,7 +470,7 @@ TS0004:
   store: https://www.aliexpress.com/item/1005005748264739.html
 AVATTO_3_GANG_TOUCH:
   config_str: avky2mvc;Avatto-3-touch;LB5;SD3u;RC2;SD7u;RC3;SD4u;RD2;M;
-  device_type: router
+  device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43542
