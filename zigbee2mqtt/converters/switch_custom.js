@@ -419,6 +419,7 @@ const definitions = [
     },
     {
         zigbeeModel: [
+            "TS0002-GIR",
             "TS0002-custom",
         ],
         model: "TS0002_basic",
