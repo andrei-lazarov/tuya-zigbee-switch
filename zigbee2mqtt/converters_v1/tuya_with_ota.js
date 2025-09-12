@@ -31,7 +31,9 @@ const tuyaModels = [
     "TS0012_switch_module",
     "TS0013",
     "TS0013_switch_module",
+    "TS011F_plug_1",
     "WHD02",
+    "_TZ3000_o1jzcxou",
 ];
 
 const tuyaMultiplePinoutsModels = [
