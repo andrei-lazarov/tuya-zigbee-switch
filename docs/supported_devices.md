@@ -36,6 +36,8 @@ Also read:
 | [LZWSM16-1](https://www.zigbee2mqtt.io/devices/LZWSM16-1.html) | Avatto LZWSM16-1 (blue socket)  | _TZ3000_hbxsdd6k | router / end_device | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/9)  | 
 | [TS0003](https://www.zigbee2mqtt.io/devices/TS0003.html) | Moes MS-104CZ  | _TZ3000_pfc7i3kt | router | Supported |    -  | 
 | [TS0003](https://www.zigbee2mqtt.io/devices/TS0003.html) | Bseed 3-gang touch switch with Neutral  | _TZ3000_7aqaupa9 | router | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/125)  | 
+| [TS0001](https://www.zigbee2mqtt.io/devices/TS0001.html) | iHseno 1-gang Neutral Touch Switch  | _TZ3000_qq9ahj6z | router | In progress |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/146)  | 
+| [TS0002](https://www.zigbee2mqtt.io/devices/TS0002.html) | iHseno 2-gang Neutral Touch Switch  | _TZ3000_zxrfobzw | router | In progress |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/146)  | 
 | [_TZ3000_pgq7ormg](https://www.zigbee2mqtt.io/devices/_TZ3000_pgq7ormg.html) | IHSENO 1-gang Neutral  | _TZ3000_pgq7ormg | router | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/105)  | 
 | [TS0003_switch_module_2](https://www.zigbee2mqtt.io/devices/TS0003_switch_module_2.html) | IHSENO 3-gang Neutral  | _TZ3000_mhhxxjrs | router | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/85)  | 
 | [TS0004_switch_module_2](https://www.zigbee2mqtt.io/devices/TS0004_switch_module_2.html) | IHSENO 4-gang Neutral  | _TZ3000_knoj8lpk | router | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/105)  | 
