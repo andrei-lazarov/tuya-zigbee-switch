@@ -1,5 +1,8 @@
+AA:
+  build: no
+  info: test
 TS0012:
-  config_str: jl7qyupf;TS0012-custom;BA0f;LD7;SC2f;SC3f;RC0;RB4;
+  config_str: jl7qyupf;TS0012-custom;BA0f;LD7;SC2f;SC3f;RC0;RB4;M;
   device_type: end_device
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
@@ -14,6 +17,7 @@ TS0012:
   - Tuya-TS0012-custom
   human_name: GIRIER TS0012, OXT
   status: Supported
+  build: yes
 WHD02:
   config_str: skueekg3;WHD02-custom;BB4u;LD3;SB5u;RB1;
   device_type: router
