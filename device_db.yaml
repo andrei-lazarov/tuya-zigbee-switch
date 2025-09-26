@@ -4,7 +4,7 @@ AUBESS_TS0002:
   device_type: router
   tuya_model_name: TS0002
   tuya_manufacturer_name: _TZ3000_lmlsduws
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0002_basic
   override_z2m_device: TMZ02
   zb_module: ZT2S
@@ -22,11 +22,11 @@ AUBESS_TS0002:
   store: https://www.aliexpress.com/item/1005005748264739.html
 AUBESS_TS0003:
   human_name: Aubess 3-gang
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0003
   tuya_manufacturer_name: _TZ3000_lvhy15ix
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0003_switch_module_2
   override_z2m_device: null
   zb_module: ZT2S
@@ -46,11 +46,11 @@ AUBESS_TS0003:
   - https://www.aliexpress.com/item/1005005748264739.html
 AUBESS_TS0004:
   human_name: Aubess 4-gang
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0004
   tuya_manufacturer_name: _TZ3000_mmkbptmx
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0004_switch_module
   override_z2m_device: null
   zb_module: ZTU
@@ -62,7 +62,7 @@ AUBESS_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43545
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/66
@@ -71,9 +71,9 @@ AUBESS_WHD02:
   human_name: Aubess WHD02
   neutral: null
   device_type: end_device
-  tuya_model_name: null
+  tuya_model_name: TS0001
   tuya_manufacturer_name: _TZ3000_46t1rvdu
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: WHD02
   override_z2m_device: null
   zb_module: ZT2S
@@ -86,7 +86,7 @@ AUBESS_WHD02:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43531
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/18
@@ -95,9 +95,9 @@ AVATTO_TOUCH_TS0003:
   human_name: AVATTO 3-gang touch switch
   neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0003
   tuya_manufacturer_name: _TZ3000_avky2mvc
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0003_switch_3_gang
   override_z2m_device: null
   zb_module: ZTU
@@ -109,18 +109,18 @@ AVATTO_TOUCH_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43542
-  build: null
+  build: yes
   status: In progress
   info: Indicator LEDs are hard wired to buttons, but they can be forced on with C4?
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/41
   store: https://www.aliexpress.com/item/1005007097427150.html
 AVATTO_TS0001:
   human_name: AVATTO ZWSM16-1
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0001
   tuya_manufacturer_name: _TZ3000_4rbqgcuv
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0001_switch_module
   override_z2m_device: ZWSM16-1-Zigbee
   zb_module: ZTU
@@ -136,18 +136,18 @@ AVATTO_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43527
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/9
   store: https://www.aliexpress.com/item/1005007247647375.html
 AVATTO_TS0002:
   human_name: AVATTO ZWSM16-2
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0002
   tuya_manufacturer_name: _TZ3000_mtnpt6ws
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0002_limited
   override_z2m_device: ZWSM16-2-Zigbee
   zb_module: ZTU
@@ -163,18 +163,18 @@ AVATTO_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43528
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/9
   store: https://www.aliexpress.com/item/1005007247647375.html
 AVATTO_TS0003:
   human_name: AVATTO ZWSM16-3
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0003
   tuya_manufacturer_name: _TZ3000_hbic3ka3
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0003_switch_module_2
   override_z2m_device: ZWSM16-3-Zigbee
   zb_module: ZTU
@@ -190,18 +190,18 @@ AVATTO_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43543
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/56
   store: https://www.aliexpress.com/item/1005007247647375.html
 AVATTO_TS0004:
   human_name: AVATTO ZWSM16-4
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0004
   tuya_manufacturer_name: _TZ3000_5ajpkyq6
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0004_switch_module_2
   override_z2m_device: ZWSM16-4-Zigbee
   zb_module: ZTU
@@ -218,18 +218,18 @@ AVATTO_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43529
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/9
   store: https://www.aliexpress.com/item/1005007247647375.html
 AVATTO_TS0011:
   human_name: AVATTO LZWSM16-1
-  neutral: null
+  neutral: without
   device_type: end_device
-  tuya_model_name: null
+  tuya_model_name: TS0011
   tuya_manufacturer_name: _TZ3000_hbxsdd6k
-  stock_converter_manufacturer: avatto
+  stock_converter_manufacturer: AVATTO
   stock_converter_model: LZWSM16-1
   override_z2m_device: null
   zb_module: ZTU
@@ -242,18 +242,18 @@ AVATTO_TS0011:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43537
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/9
   store: https://www.aliexpress.com/item/1005007247647375.html
 AVATTO_TS0012:
   human_name: AVATTO LZWSM16-2
-  neutral: null
+  neutral: without
   device_type: end_device
-  tuya_model_name: null
+  tuya_model_name: TS0012
   tuya_manufacturer_name: _TZ3000_ljhbw1c9
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0012_switch_module
   override_z2m_device: LZWSM16-2
   zb_module: ZTU
@@ -266,18 +266,18 @@ AVATTO_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43530
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/16
   store: https://www.aliexpress.com/item/1005007247647375.html
 AVATTO_TS0013:
   human_name: AVATTO LZWSM16-3
-  neutral: null
+  neutral: without
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_avotanj3
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0013
   override_z2m_device: LZWSM16-3
   zb_module: ZTU
@@ -288,18 +288,18 @@ AVATTO_TS0013:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43552
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/135
   store: https://www.aliexpress.com/item/1005007247647375.html
 BSEED_SOCKET_PM_TS011F:
   human_name: BSEED PM socket
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS011F
   tuya_manufacturer_name: _TZ3000_b28wrpvx
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS011F_plug_1
   override_z2m_device: TS011F_plug_1_2
   zb_module: ZTU
@@ -320,13 +320,13 @@ BSEED_SOCKET_PM_TS011F:
   - https://www.aliexpress.com/item/1005003350696939.html
 BSEED_SOCKET_TS011F:
   human_name: BSEED socket
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS011F
   tuya_manufacturer_name: _TZ3000_o1jzcxou
-  stock_converter_manufacturer: null
-  stock_converter_model: _TZ3000_o1jzcxou
-  override_z2m_device: null
+  stock_converter_manufacturer: Tuya
+  stock_converter_model: TS011F_plug_2
+  override_z2m_device: _TZ3000_o1jzcxou
   zb_module: ZTU
   config_str: o1jzcxou;TS011F-BS;LC2;SB4u;RC3;ID2;M;
   alt_config_str: null
@@ -341,14 +341,37 @@ BSEED_SOCKET_TS011F:
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/145
   store:
   - https://www.aliexpress.com/item/1005004402438527.html
+BSEED_SWITCH_TS0726_2GANG:
+  human_name: BSEED 2-gang switch
+  neutral: required
+  device_type: router
+  tuya_model_name: TS0726
+  tuya_manufacturer_name: _TZ3002_zjuvw9zf
+  stock_converter_model: TS0726_2_gang_scene_switch
+  override_z2m_device: EC-GL86ZPCS21
+  zb_module: ZT3L
+  config_str: zjuvw9zf;TS0726-2-BS;LC4;SB7u;RC2;ID7;SB1u;RC3;IC0;
+  alt_config_str: null
+  old_manufacturer_names: null
+  old_zb_models: null
+  tuya_manufacturer_id: 4417
+  tuya_image_type: 54179
+  firmware_image_type: 43562
+  build: yes
+  status: Supported
+  info: null
+  github_issue: https://github.com/romasku/tuya-zigbee-switch/pull/15
+  store:
+  - https://www.aliexpress.com/item/1005008749674564.html
+  - https://www.bseed.com/products/bseed-smart-zigbee-light-switch-with-neutral-hub-required-switch-work-with-tuya-alexa?variant=46312889057435
 BSEED_TOUCH_2_TS0012:
   human_name: BSEED 2-gang touch switch
   neutral: without
   device_type: end_device
-  tuya_model_name: null
+  tuya_model_name: TS0012
   tuya_manufacturer_name: _TZ3000_xk5udnd6
   stock_converter_manufacturer: null
-  stock_converter_model: TS0012
+  stock_converter_model: null
   override_z2m_device: null
   zb_module: ZTU
   config_str: xk5udnd6;Bseed-2-gang-2;LC3;SB5u;RC0B6;ID2;SD4u;RA1D7;ID3;M;
@@ -360,7 +383,7 @@ BSEED_TOUCH_2_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43544
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/51
@@ -369,10 +392,10 @@ BSEED_TOUCH_TS0003:
   human_name: BSEED 3-gang touch switch
   neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0003
   tuya_manufacturer_name: _TZ3000_7aqaupa9
   stock_converter_manufacturer: null
-  stock_converter_model: TS0003
+  stock_converter_model: null
   override_z2m_device: null
   zb_module: ZT3L
   config_str: 7aqaupa9;TS0003-BS;LA0i;SC3u;RC2;SB7u;RB4;SB5u;RC0;M;
@@ -382,7 +405,7 @@ BSEED_TOUCH_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43549
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/125
@@ -391,10 +414,10 @@ BSEED_TOUCH_TS0012:
   human_name: BSEED 2-gang touch switch
   neutral: without
   device_type: end_device
-  tuya_model_name: null
+  tuya_model_name: TS0012
   tuya_manufacturer_name: _TZ3000_f2slq5pj
   stock_converter_manufacturer: null
-  stock_converter_model: TS0012
+  stock_converter_model: null
   override_z2m_device: null
   zb_module: ZTU
   config_str: f2slq5pj;Bseed-2-gang;SB6u;RD3;IC2;SA1u;RC0;IB4;M;
@@ -406,18 +429,18 @@ BSEED_TOUCH_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43534
-  build: null
+  build: yes
   status: In progress
   info: Pin C3 disables both LEDs ?
   github_issue: https://github.com/romasku/tuya-zigbee-switch/pull/23
   store: null
 GIRIER_TS0002:
   human_name: Girier 2-gang
-  neutral: null
+  neutral: required
   device_type: router
-  tuya_model_name: null
+  tuya_model_name: TS0002 #here
   tuya_manufacturer_name: _TZ3000_zmy4lslw
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0002_basic
   override_z2m_device: null
   zb_module: ZT2S
@@ -430,7 +453,7 @@ GIRIER_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43526
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/29
@@ -441,7 +464,7 @@ GIRIER_TS0013:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_ypgri8yz
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0013_switch_module
   override_z2m_device: ZB08
   zb_module: null
@@ -455,7 +478,7 @@ GIRIER_TS0013:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43539
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/37
@@ -466,7 +489,7 @@ IHS_TOUCH_TS0001:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_qq9ahj6z
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0001
   override_z2m_device: null
   zb_module: ZT3L
@@ -488,7 +511,7 @@ IHS_TOUCH_TS0002:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_zxrfobzw
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0002
   override_z2m_device: null
   zb_module: ZT3L
@@ -510,7 +533,7 @@ IHS_TS0001:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_pgq7ormg
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0001_switch_module_3
   override_z2m_device: _TZ3000_pgq7ormg
   zb_module: ZTU
@@ -521,7 +544,7 @@ IHS_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43554
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/105
@@ -532,7 +555,7 @@ IHS_TS0003:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_mhhxxjrs
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0003_switch_module_2
   override_z2m_device: null
   zb_module: ZTU
@@ -546,7 +569,7 @@ IHS_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43546
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/85
@@ -557,7 +580,7 @@ IHS_TS0004:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_knoj8lpk
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0004_switch_module_2
   override_z2m_device: null
   zb_module: ZTU
@@ -569,7 +592,7 @@ IHS_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43548
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/105
@@ -580,7 +603,7 @@ MOES_TOUCH_TS0011:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_hhiodade
-  stock_converter_manufacturer: moes
+  stock_converter_manufacturer: Moes
   stock_converter_model: ZS-EUB_1gang
   override_z2m_device: null
   zb_module: ZTU
@@ -593,7 +616,7 @@ MOES_TOUCH_TS0011:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43532
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/14
@@ -604,7 +627,7 @@ MOES_TOUCH_TS0012:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_18ejxno0
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0012
   override_z2m_device: ZS-EUB_2gang
   zb_module: ZTU
@@ -617,7 +640,7 @@ MOES_TOUCH_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43510
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/14
@@ -628,7 +651,7 @@ MOES_TOUCH_TS0013:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_qewo8dlz
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0013
   override_z2m_device: null
   zb_module: ZTU
@@ -641,7 +664,7 @@ MOES_TOUCH_TS0013:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43533
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/14
@@ -652,7 +675,7 @@ MOES_TS0002:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_qaa59zqd
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0002_basic
   override_z2m_device: ZM-104B-M
   zb_module: ZT2S
@@ -674,7 +697,7 @@ MOES_TS0003:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_pfc7i3kt
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0003
   override_z2m_device: null
   zb_module: null
@@ -686,7 +709,7 @@ MOES_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43538
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: null
@@ -697,7 +720,7 @@ OXT_TS0002:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_bvrlqyj7
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0002_basic
   override_z2m_device: null
   zb_module: ZT3L
@@ -709,7 +732,7 @@ OXT_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43547
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/49
@@ -720,7 +743,7 @@ TUYA_TS0001:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_tqlv4ug4
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0001_switch_module
   override_z2m_device: null
   zb_module: null
@@ -732,7 +755,7 @@ TUYA_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43525
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/6
@@ -743,7 +766,7 @@ TUYA_TS0002:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_01gpyda5
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0002_basic
   override_z2m_device: null
   zb_module: null
@@ -755,7 +778,7 @@ TUYA_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43523
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/6
@@ -766,7 +789,7 @@ TUYA_TS0004:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_ltt60asa
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0004_switch_module
   override_z2m_device: null
   zb_module: ZTU
@@ -778,7 +801,7 @@ TUYA_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43540
-  build: null
+  build: yes
   status: In progress
   info: Some issues with reporting and groups
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/42
@@ -789,7 +812,7 @@ TUYA_TS0011:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_ji4araar
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0011_switch_module
   override_z2m_device: null
   zb_module: null
@@ -801,7 +824,7 @@ TUYA_TS0011:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43524
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/4
@@ -812,7 +835,7 @@ TUYA_TS0012:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_jl7qyupf
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0012_switch_module
   override_z2m_device: null
   zb_module: null
@@ -827,7 +850,7 @@ TUYA_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43521
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: null
@@ -838,7 +861,7 @@ TUYA_WHD02:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_skueekg3
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: WHD02
   override_z2m_device: null
   zb_module: null
@@ -850,7 +873,7 @@ TUYA_WHD02:
   tuya_manufacturer_id: 4407
   tuya_image_type: 524
   firmware_image_type: 43522
-  build: null
+  build: yes
   status: Supported
   info: null
   github_issue: null
@@ -861,7 +884,7 @@ TUYA_WHD02_2:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_skueekg3
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: WHD02
   override_z2m_device: null
   zb_module: ZT2S_without_shield
@@ -873,7 +896,7 @@ TUYA_WHD02_2:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43535
-  build: null
+  build: yes
   status: In progress
   info: tuya_manufacturer_name is not confirmed ?
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/24
@@ -884,7 +907,7 @@ TUYA_WHD02_3:
   device_type: router
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_skueekg3
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: WHD02
   override_z2m_device: null
   zb_module: ZT2S_without_shield
@@ -896,7 +919,7 @@ TUYA_WHD02_3:
   tuya_manufacturer_id: 4417
   tuya_image_type: 518
   firmware_image_type: 43541
-  build: null
+  build: yes
   status: In progress
   info: tuya_manufacturer_name is not confirmed ?
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/44
@@ -907,7 +930,7 @@ ZEMISMART_SWITCH_TS0012:
   device_type: end_device
   tuya_model_name: null
   tuya_manufacturer_name: _TZ3000_zmlunnhy
-  stock_converter_manufacturer: null
+  stock_converter_manufacturer: Tuya
   stock_converter_model: TS0012
   override_z2m_device: null
   zb_module: ZT3L
@@ -920,7 +943,7 @@ ZEMISMART_SWITCH_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43536
-  build: null
+  build: yes
   status: In progress
   info: Untested
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/19

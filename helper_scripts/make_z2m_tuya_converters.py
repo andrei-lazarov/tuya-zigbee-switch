@@ -27,9 +27,9 @@ if __name__ == "__main__":
     db = yaml.safe_load(db_str)
 
     manufacturers = {
-        "tuya": ["TS0001", "TS0002", "TS0003", "TS0004"],
-        "moes": [],
-        "avatto": []
+        "Tuya": [],
+        "Moes": [],
+        "AVATTO": []
     }
 
     # Prepare containers for multiple pinout models
@@ -41,8 +41,8 @@ if __name__ == "__main__":
         if not entry.get("build", True):
             continue
       
-        model = entry.get("stock_converter_model")
-        mfr = entry.get("stock_converter_manufacturer", "tuya")
+        model = entry.get("stock_converter_model") or entry.get("tuya_model_name")
+        mfr = entry.get("stock_converter_manufacturer", "Tuya")
         if model is None or mfr not in manufacturers:
             continue
 
@@ -51,13 +51,13 @@ if __name__ == "__main__":
         if entry.get("alt_config_str"):
             multiple_pinouts[mfr].append(model)
 
-    tuyaModels = manufacturers["tuya"]
-    moesModels = manufacturers["moes"]
-    avattoModels = manufacturers["avatto"]
+    tuyaModels = manufacturers["Tuya"]
+    moesModels = manufacturers["Moes"]
+    avattoModels = manufacturers["AVATTO"]
 
-    tuyaMultiplePinoutsModels = multiple_pinouts["tuya"]
-    moesMultiplePinoutsModels = multiple_pinouts["moes"]
-    avattoMultiplePinoutsModels = multiple_pinouts["avatto"]
+    tuyaMultiplePinoutsModels = multiple_pinouts["Tuya"]
+    moesMultiplePinoutsModels = multiple_pinouts["Moes"]
+    avattoMultiplePinoutsModels = multiple_pinouts["AVATTO"]
 
     template = env.get_template("tuya_with_ota.js.jinja")
 

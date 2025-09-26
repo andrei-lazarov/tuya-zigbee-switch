@@ -40,7 +40,7 @@ if __name__ == "__main__":
                 **device,
                 "tuya_manufacturer_name": manufacturer_name,
                 "device_types": [device["device_type"]],
-                "z2m_device": device.get("override_z2m_device") or device["stock_converter_model"]
+                "z2m_device": device.get("override_z2m_device") or device.get("stock_converter_model") or device.get("tuya_model_name")
             }
         if (device["device_type"] == "end_device"):
              by_manufacturer_names[manufacturer_name]["device_types"].append("router")
