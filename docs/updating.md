@@ -1,6 +1,7 @@
 # Updating
 
-This page describes updating supported devices OTA (both converting from original firmware and version bumps).
+This page describes updating supported devices OTA (both converting from original firmware and version bumps).  
+Open the **Outline** (table of contents) from the top right.  
 
 > [!CAUTION]  
 > OTA flashing and updates from the main branch are generally safe.  
@@ -23,6 +24,7 @@ Additionally, to use the new features, you must also **download and regularly up
 > Consider yourself invited to our [Discord](/readme.md#discord) community! 
 
 ## First-time update steps
+1. Find your device on devices/supported.md
 1. Read [known_issues.md](./known_issues.md)
 2. Download the custom [# Quirks / Converters](#quirks--converters)
 3. Apply the preferred [# OTA index](#ota-index) (not FORCE)
@@ -62,7 +64,7 @@ Hopefully, you now have a working device with custom firmware! 😊
 > [!NOTE]  
 > If your device is several versions behind, it will update directly to the latest verion.
 
-## OTA index
+# OTA index
 
 The index is a list of links to firmware images.  
 We use a link to the latest custom index so it's always up to date.  
@@ -200,11 +202,13 @@ https://raw.githubusercontent.com/romasku/tuya-zigbee-switch/refs/heads/main/zig
 **Zigbee is very low bandwidth**.  
 By default, updates perform slowly to put less strain on the network and ensure stability.  
 This may take hours, so if your device has good signal and the network is not being actively used, you can lower the duration to a few minutes.  
+
 **Go to Z2M ➡ Settings ➡ OTA updates and tweak the values.**  
+50B + 50ms takes less than 3 minutes on an empty network.
 
 Read the [official Z2M docs][z2m_ota_speed] for more information.
 
-## Quirks / Converters
+# Quirks / Converters
 
 Quirks and converters work like a database.  
 They are responsible for recognizing devices and exposing all the supported features + showing correct name and picture.  
