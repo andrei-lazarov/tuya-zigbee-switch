@@ -18,3 +18,5 @@ Also read:
 {% for device in devices %}
 | [{{device.z2m_device}}](https://www.zigbee2mqtt.io/devices/{{device.z2m_device | replace(" ", "_")}}.html) | {{device.human_name}}  | {{device.tuya_manufacturer_name}} | {{ device.device_types | join(' / ') }} | {{device.status}} |  {% if device.github_issue %} [link]({{device.github_issue}}) {% else %}  - {% endif%} | 
 {% endfor %}
+
+// allow multiple issues
