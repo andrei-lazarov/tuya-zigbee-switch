@@ -30,6 +30,7 @@ Also read:
 | [TS011F_plug_1_2](https://www.zigbee2mqtt.io/devices/TS011F_plug_1_2.html) | BSEED PM socket  | _TZ3000_b28wrpvx | router | In progress |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/145)  | 
 | [_TZ3000_o1jzcxou](https://www.zigbee2mqtt.io/devices/_TZ3000_o1jzcxou.html) | BSEED socket  | _TZ3000_o1jzcxou | router | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/145)  | 
 | [EC-GL86ZPCS21](https://www.zigbee2mqtt.io/devices/EC-GL86ZPCS21.html) | BSEED 2-gang switch  | _TZ3002_zjuvw9zf | router | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/157)  | 
+| [TS0726_3_gang](https://www.zigbee2mqtt.io/devices/TS0726_3_gang.html) | BSEED 3-gang switch  | _TZ3002_iedhxgyi | router | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/157)  | 
 | [TS0012](https://www.zigbee2mqtt.io/devices/TS0012.html) | BSEED 2-gang touch switch  | _TZ3000_f2slq5pj | router / end_device | In progress |   [link](https://github.com/romasku/tuya-zigbee-switch/pull/23)  | 
 | [TS0012](https://www.zigbee2mqtt.io/devices/TS0012.html) | BSEED 2-gang touch switch  | _TZ3000_xk5udnd6 | router / end_device | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/51)  | 
 | [TS0003](https://www.zigbee2mqtt.io/devices/TS0003.html) | BSEED 3-gang touch switch  | _TZ3000_7aqaupa9 | router | Supported |   [link](https://github.com/romasku/tuya-zigbee-switch/issues/125)  | 
