@@ -4,6 +4,11 @@
 #include "device_config/nvm_items.h"
 #include "hal/nvm.h"
 #include "hal/printf_selector.h"
+#include <stdbool.h>
+#include "switch_cluster.h"
+
+extern zigbee_relay_cluster relay_clusters[];
+extern zigbee_switch_cluster switch_clusters[];
 
 hal_zigbee_cmd_result_t relay_cluster_callback(zigbee_relay_cluster *cluster,
                                                uint8_t command_id,
@@ -88,16 +93,16 @@ hal_zigbee_cmd_result_t relay_cluster_callback(zigbee_relay_cluster *cluster,
   switch (command_id) {
   case ZCL_CMD_ONOFF_ON:
   case ZCL_CMD_ON_WITH_RECALL_GLOBAL_SCENE:
-    relay_cluster_on(cluster);
+    relay_cluster_on(cluster, false);
     break;
 
   case ZCL_CMD_ONOFF_OFF:
   case ZCL_CMD_OFF_WITH_EFFECT:
-    relay_cluster_off(cluster);
+    relay_cluster_off(cluster, false);
     break;
 
   case ZCL_CMD_ONOFF_TOGGLE:
-    relay_cluster_toggle(cluster);
+    relay_cluster_toggle(cluster, false);
     break;
 
   default:
@@ -126,18 +131,42 @@ void sync_indicator_led(zigbee_relay_cluster *cluster) {
                                       ZCL_ATTR_ONOFF_INDICATOR_STATE);
 }
 
-void relay_cluster_on(zigbee_relay_cluster *cluster) {
-  relay_on(cluster->relay);
+void relay_cluster_on(zigbee_relay_cluster *cluster, bool from_startup) {
+
+  bool fully_detached = false;
+
+  if (!from_startup) {
+    zigbee_switch_cluster *switch_cluster = &switch_clusters[cluster->relay_idx - 1];
+    fully_detached = (switch_cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_FULLY_DETACHED);
+  }
+
+  relay_on(cluster->relay, fully_detached);
   sync_indicator_led(cluster);
 }
 
-void relay_cluster_off(zigbee_relay_cluster *cluster) {
-  relay_off(cluster->relay);
+void relay_cluster_off(zigbee_relay_cluster *cluster, bool from_startup) {
+
+  bool fully_detached = false;
+
+  if (!from_startup) {
+    zigbee_switch_cluster *switch_cluster = &switch_clusters[cluster->relay_idx - 1];
+    fully_detached = (switch_cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_FULLY_DETACHED);
+  }
+  
+  relay_off(cluster->relay, fully_detached);
   sync_indicator_led(cluster);
 }
 
-void relay_cluster_toggle(zigbee_relay_cluster *cluster) {
-  relay_toggle(cluster->relay);
+void relay_cluster_toggle(zigbee_relay_cluster *cluster, bool from_startup) {
+
+  bool fully_detached = false;
+
+  if (!from_startup) {
+    zigbee_switch_cluster *switch_cluster = &switch_clusters[cluster->relay_idx - 1];
+    fully_detached = (switch_cluster->relay_mode == ZCL_ONOFF_CONFIGURATION_RELAY_MODE_FULLY_DETACHED);
+  }
+
+  relay_toggle(cluster->relay, fully_detached);
   sync_indicator_led(cluster);
 }
 
@@ -213,26 +242,26 @@ void relay_cluster_handle_startup_mode(zigbee_relay_cluster *cluster) {
 
   switch (cluster->startup_mode) {
   case ZCL_START_UP_ONOFF_SET_ONOFF_TO_OFF:
-    relay_cluster_off(cluster);
+    relay_cluster_off(cluster, true);
     break;
 
   case ZCL_START_UP_ONOFF_SET_ONOFF_TO_ON:
-    relay_cluster_on(cluster);
+    relay_cluster_on(cluster, true);
     break;
 
   case ZCL_START_UP_ONOFF_SET_ONOFF_TOGGLE:
     if (prev_on) {
-      relay_cluster_off(cluster);
+      relay_cluster_off(cluster, true);
     } else {
-      relay_cluster_on(cluster);
+      relay_cluster_on(cluster, true);
     }
     break;
 
   case ZCL_START_UP_ONOFF_SET_ONOFF_TO_PREVIOUS:
     if (prev_on) {
-      relay_cluster_on(cluster);
+      relay_cluster_on(cluster, true);
     } else {
-      relay_cluster_off(cluster);
+      relay_cluster_off(cluster, true);
     }
     break;
   }

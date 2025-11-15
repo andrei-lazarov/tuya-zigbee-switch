@@ -20,9 +20,9 @@ typedef struct {
 void relay_cluster_add_to_endpoint(zigbee_relay_cluster *cluster,
                                    hal_zigbee_endpoint *endpoint);
 
-void relay_cluster_on(zigbee_relay_cluster *cluster);
-void relay_cluster_off(zigbee_relay_cluster *cluster);
-void relay_cluster_toggle(zigbee_relay_cluster *cluster);
+void relay_cluster_on(zigbee_relay_cluster *cluster, bool from_startup);
+void relay_cluster_off(zigbee_relay_cluster *cluster, bool from_startup);
+void relay_cluster_toggle(zigbee_relay_cluster *cluster, bool from_startup);
 
 void relay_cluster_report(zigbee_relay_cluster *cluster);
 
