@@ -4,6 +4,7 @@
 #include "device_config/nvm_items.h"
 #include "hal/nvm.h"
 #include "hal/printf_selector.h"
+#include <stdbool.h>
 
 hal_zigbee_cmd_result_t relay_cluster_callback(zigbee_relay_cluster *cluster,
                                                uint8_t command_id,
@@ -63,10 +64,12 @@ void relay_cluster_add_to_endpoint(zigbee_relay_cluster *cluster,
     SETUP_ATTR(3, ZCL_ATTR_ONOFF_INDICATOR_STATE, ZCL_DATA_TYPE_BOOLEAN,
                ATTR_WRITABLE, cluster->indicator_led->on);
   }
+  SETUP_ATTR(4, ZCL_ATTR_ONOFF_DETACHED_RELAY_MODE, ZCL_DATA_TYPE_BOOLEAN, ATTR_WRITABLE,
+             cluster->detached_mode);
 
   endpoint->clusters[endpoint->cluster_count].cluster_id = ZCL_CLUSTER_ON_OFF;
   endpoint->clusters[endpoint->cluster_count].attribute_count =
-      cluster->indicator_led != NULL ? 4 : 2;
+      cluster->indicator_led != NULL ? 5 : 3;
   endpoint->clusters[endpoint->cluster_count].attributes = cluster->attr_infos;
   endpoint->clusters[endpoint->cluster_count].is_server = 1;
   endpoint->clusters[endpoint->cluster_count].cmd_callback =
@@ -127,17 +130,70 @@ void sync_indicator_led(zigbee_relay_cluster *cluster) {
 }
 
 void relay_cluster_on(zigbee_relay_cluster *cluster) {
-  relay_on(cluster->relay);
+  relay_cluster_on_impl(cluster, false);
+}
+
+void relay_cluster_on_from_startup(zigbee_relay_cluster *cluster) {
+  relay_cluster_on_impl(cluster, true);
+}
+
+void relay_cluster_on_impl(zigbee_relay_cluster *cluster, bool from_startup) {
+
+  bool relay_detached = false;
+
+  if (!from_startup) {
+    relay_detached = (cluster->detached_mode == ZCL_ONOFF_RELAY_MODE_DETACHED);
+    printf("relay cluster detached mode %d\r\n", cluster->detached_mode);
+  }
+
+  printf("relay_cluster_on start %d det %d\r\n", from_startup, relay_detached);
+
+  relay_on(cluster->relay, relay_detached);
   sync_indicator_led(cluster);
 }
 
 void relay_cluster_off(zigbee_relay_cluster *cluster) {
-  relay_off(cluster->relay);
+  relay_cluster_off_impl(cluster, false);
+}
+
+void relay_cluster_off_from_startup(zigbee_relay_cluster *cluster) {
+  relay_cluster_off_impl(cluster, true);
+}
+
+void relay_cluster_off_impl(zigbee_relay_cluster *cluster, bool from_startup) {
+
+  bool relay_detached = false;
+
+  if (!from_startup) {
+    relay_detached = (cluster->detached_mode == ZCL_ONOFF_RELAY_MODE_DETACHED);
+    printf("relay cluster detached mode %d\r\n", cluster->detached_mode);
+  }
+  
+  printf("relay_cluster_off start %d det %d\r\n", from_startup, relay_detached);
+
+  relay_off(cluster->relay, relay_detached);
   sync_indicator_led(cluster);
 }
 
 void relay_cluster_toggle(zigbee_relay_cluster *cluster) {
-  relay_toggle(cluster->relay);
+  relay_cluster_toggle_impl(cluster, false);
+}
+
+void relay_cluster_toggle_from_startup(zigbee_relay_cluster *cluster) {
+  relay_cluster_toggle_impl(cluster, true);
+}
+
+void relay_cluster_toggle_impl(zigbee_relay_cluster *cluster, bool from_startup) {
+
+  bool relay_detached = false;
+  
+  if (!from_startup) {
+    relay_detached = (cluster->detached_mode == ZCL_ONOFF_RELAY_MODE_DETACHED);
+    printf("relay cluster detached mode %d\r\n", cluster->detached_mode);
+  }
+  printf("relay_cluster_toggle start %d det %d\r\n", from_startup, relay_detached);
+
+  relay_toggle(cluster->relay, relay_detached);
   sync_indicator_led(cluster);
 }
 
@@ -213,26 +269,26 @@ void relay_cluster_handle_startup_mode(zigbee_relay_cluster *cluster) {
 
   switch (cluster->startup_mode) {
   case ZCL_START_UP_ONOFF_SET_ONOFF_TO_OFF:
-    relay_cluster_off(cluster);
+    relay_cluster_off_from_startup(cluster);
     break;
 
   case ZCL_START_UP_ONOFF_SET_ONOFF_TO_ON:
-    relay_cluster_on(cluster);
+    relay_cluster_on_from_startup(cluster);
     break;
 
   case ZCL_START_UP_ONOFF_SET_ONOFF_TOGGLE:
     if (prev_on) {
-      relay_cluster_off(cluster);
+      relay_cluster_off_from_startup(cluster);
     } else {
-      relay_cluster_on(cluster);
+      relay_cluster_on_from_startup(cluster);
     }
     break;
 
   case ZCL_START_UP_ONOFF_SET_ONOFF_TO_PREVIOUS:
     if (prev_on) {
-      relay_cluster_on(cluster);
+      relay_cluster_on_from_startup(cluster);
     } else {
-      relay_cluster_off(cluster);
+      relay_cluster_off_from_startup(cluster);
     }
     break;
   }

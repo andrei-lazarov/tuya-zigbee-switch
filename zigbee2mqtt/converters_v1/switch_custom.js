@@ -125,6 +125,15 @@ const romasku = {
             description: "State of the relay indicator LED",
             access: "ALL",
         }),
+    relayDetachedMode: (name, endpointName) =>
+        enumLookup({
+            name,
+            endpointName,
+            lookup: { attached: 0, detached: 1 },
+            cluster: "genOnOff",
+            attribute: { ID: 0xff03, type: 0x10 }, // Boolean
+            description: "Detach physical relay from its virtual state (Option ignored by power-on behavior)",
+        }),
     networkIndicator: (name, endpointName) =>
         binary({
             name,
@@ -205,6 +214,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -257,6 +267,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -334,6 +346,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -436,6 +451,10 @@ const definitions = [
             romasku.bindedMode("switch_3_binded_mode", "switch_3"),
             romasku.longPressDuration("switch_3_long_press_duration", "switch_3"),
             romasku.levelMoveRate("switch_3_level_move_rate", "switch_3"),
+            romasku.relayDetachedMode("relay_0_detached_mode", "relay_0"),
+            romasku.relayDetachedMode("relay_1_detached_mode", "relay_1"),
+            romasku.relayDetachedMode("relay_2_detached_mode", "relay_2"),
+            romasku.relayDetachedMode("relay_3_detached_mode", "relay_3"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -547,6 +566,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -627,6 +649,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -681,6 +704,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -760,6 +785,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -864,6 +892,10 @@ const definitions = [
             romasku.bindedMode("switch_3_binded_mode", "switch_3"),
             romasku.longPressDuration("switch_3_long_press_duration", "switch_3"),
             romasku.levelMoveRate("switch_3_level_move_rate", "switch_3"),
+            romasku.relayDetachedMode("relay_0_detached_mode", "relay_0"),
+            romasku.relayDetachedMode("relay_1_detached_mode", "relay_1"),
+            romasku.relayDetachedMode("relay_2_detached_mode", "relay_2"),
+            romasku.relayDetachedMode("relay_3_detached_mode", "relay_3"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -960,6 +992,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1013,6 +1046,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1090,6 +1125,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1170,6 +1208,7 @@ const definitions = [
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
             romasku.relayIndicatorMode("relay_indicator_mode", "relay"),
             romasku.relayIndicator("relay_indicator", "relay"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1224,6 +1263,7 @@ const definitions = [
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
             romasku.relayIndicatorMode("relay_indicator_mode", "relay"),
             romasku.relayIndicator("relay_indicator", "relay"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1288,6 +1328,8 @@ const definitions = [
             romasku.relayIndicator("relay_left_indicator", "relay_left"),
             romasku.relayIndicatorMode("relay_right_indicator_mode", "relay_right"),
             romasku.relayIndicator("relay_right_indicator", "relay_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1387,6 +1429,9 @@ const definitions = [
             romasku.relayIndicator("relay_middle_indicator", "relay_middle"),
             romasku.relayIndicatorMode("relay_right_indicator_mode", "relay_right"),
             romasku.relayIndicator("relay_right_indicator", "relay_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1491,6 +1536,7 @@ const definitions = [
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
             romasku.relayIndicatorMode("relay_indicator_mode", "relay"),
             romasku.relayIndicator("relay_indicator", "relay"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1555,6 +1601,8 @@ const definitions = [
             romasku.relayIndicator("relay_left_indicator", "relay_left"),
             romasku.relayIndicatorMode("relay_right_indicator_mode", "relay_right"),
             romasku.relayIndicator("relay_right_indicator", "relay_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1645,6 +1693,8 @@ const definitions = [
             romasku.relayIndicator("relay_left_indicator", "relay_left"),
             romasku.relayIndicatorMode("relay_right_indicator_mode", "relay_right"),
             romasku.relayIndicator("relay_right_indicator", "relay_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1724,6 +1774,7 @@ const definitions = [
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
             romasku.relayIndicatorMode("relay_indicator_mode", "relay"),
             romasku.relayIndicator("relay_indicator", "relay"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1786,6 +1837,8 @@ const definitions = [
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
             romasku.relayIndicatorMode("relay_left_indicator_mode", "relay_left"),
             romasku.relayIndicator("relay_left_indicator", "relay_left"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1871,6 +1924,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -1958,6 +2014,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2035,6 +2093,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2130,6 +2191,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2232,6 +2296,10 @@ const definitions = [
             romasku.bindedMode("switch_3_binded_mode", "switch_3"),
             romasku.longPressDuration("switch_3_long_press_duration", "switch_3"),
             romasku.levelMoveRate("switch_3_level_move_rate", "switch_3"),
+            romasku.relayDetachedMode("relay_0_detached_mode", "relay_0"),
+            romasku.relayDetachedMode("relay_1_detached_mode", "relay_1"),
+            romasku.relayDetachedMode("relay_2_detached_mode", "relay_2"),
+            romasku.relayDetachedMode("relay_3_detached_mode", "relay_3"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2327,6 +2395,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2379,6 +2448,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2440,6 +2511,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2501,6 +2573,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2603,6 +2678,10 @@ const definitions = [
             romasku.bindedMode("switch_3_binded_mode", "switch_3"),
             romasku.longPressDuration("switch_3_long_press_duration", "switch_3"),
             romasku.levelMoveRate("switch_3_level_move_rate", "switch_3"),
+            romasku.relayDetachedMode("relay_0_detached_mode", "relay_0"),
+            romasku.relayDetachedMode("relay_1_detached_mode", "relay_1"),
+            romasku.relayDetachedMode("relay_2_detached_mode", "relay_2"),
+            romasku.relayDetachedMode("relay_3_detached_mode", "relay_3"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2722,6 +2801,10 @@ const definitions = [
             romasku.bindedMode("switch_3_binded_mode", "switch_3"),
             romasku.longPressDuration("switch_3_long_press_duration", "switch_3"),
             romasku.levelMoveRate("switch_3_level_move_rate", "switch_3"),
+            romasku.relayDetachedMode("relay_0_detached_mode", "relay_0"),
+            romasku.relayDetachedMode("relay_1_detached_mode", "relay_1"),
+            romasku.relayDetachedMode("relay_2_detached_mode", "relay_2"),
+            romasku.relayDetachedMode("relay_3_detached_mode", "relay_3"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2819,6 +2902,7 @@ const definitions = [
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
             romasku.relayIndicatorMode("relay_indicator_mode", "relay"),
             romasku.relayIndicator("relay_indicator", "relay"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2883,6 +2967,8 @@ const definitions = [
             romasku.relayIndicator("relay_left_indicator", "relay_left"),
             romasku.relayIndicatorMode("relay_right_indicator_mode", "relay_right"),
             romasku.relayIndicator("relay_right_indicator", "relay_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -2982,6 +3068,9 @@ const definitions = [
             romasku.relayIndicator("relay_middle_indicator", "relay_middle"),
             romasku.relayIndicatorMode("relay_right_indicator_mode", "relay_right"),
             romasku.relayIndicator("relay_right_indicator", "relay_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3115,6 +3204,10 @@ const definitions = [
             romasku.relayIndicator("relay_2_indicator", "relay_2"),
             romasku.relayIndicatorMode("relay_3_indicator_mode", "relay_3"),
             romasku.relayIndicator("relay_3_indicator", "relay_3"),
+            romasku.relayDetachedMode("relay_0_detached_mode", "relay_0"),
+            romasku.relayDetachedMode("relay_1_detached_mode", "relay_1"),
+            romasku.relayDetachedMode("relay_2_detached_mode", "relay_2"),
+            romasku.relayDetachedMode("relay_3_detached_mode", "relay_3"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3250,6 +3343,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3326,6 +3421,9 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_middle_detached_mode", "relay_middle"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3412,6 +3510,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3473,6 +3573,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3541,6 +3642,10 @@ const definitions = [
             romasku.bindedMode("switch_3_binded_mode", "switch_3"),
             romasku.longPressDuration("switch_3_long_press_duration", "switch_3"),
             romasku.levelMoveRate("switch_3_level_move_rate", "switch_3"),
+            romasku.relayDetachedMode("relay_0_detached_mode", "relay_0"),
+            romasku.relayDetachedMode("relay_1_detached_mode", "relay_1"),
+            romasku.relayDetachedMode("relay_2_detached_mode", "relay_2"),
+            romasku.relayDetachedMode("relay_3_detached_mode", "relay_3"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3636,6 +3741,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3680,6 +3786,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3724,6 +3831,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3768,6 +3876,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3812,6 +3921,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3864,6 +3974,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -3949,6 +4061,10 @@ const definitions = [
             romasku.bindedMode("switch_3_binded_mode", "switch_3"),
             romasku.longPressDuration("switch_3_long_press_duration", "switch_3"),
             romasku.levelMoveRate("switch_3_level_move_rate", "switch_3"),
+            romasku.relayDetachedMode("relay_0_detached_mode", "relay_0"),
+            romasku.relayDetachedMode("relay_1_detached_mode", "relay_1"),
+            romasku.relayDetachedMode("relay_2_detached_mode", "relay_2"),
+            romasku.relayDetachedMode("relay_3_detached_mode", "relay_3"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -4044,6 +4160,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -4088,6 +4205,7 @@ const definitions = [
             romasku.bindedMode("switch_binded_mode", "switch"),
             romasku.longPressDuration("switch_long_press_duration", "switch"),
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -4142,6 +4260,8 @@ const definitions = [
             romasku.bindedMode("switch_right_binded_mode", "switch_right"),
             romasku.longPressDuration("switch_right_long_press_duration", "switch_right"),
             romasku.levelMoveRate("switch_right_level_move_rate", "switch_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -4215,6 +4335,8 @@ const definitions = [
             romasku.relayIndicator("relay_left_indicator", "relay_left"),
             romasku.relayIndicatorMode("relay_right_indicator_mode", "relay_right"),
             romasku.relayIndicator("relay_right_indicator", "relay_right"),
+            romasku.relayDetachedMode("relay_left_detached_mode", "relay_left"),
+            romasku.relayDetachedMode("relay_right_detached_mode", "relay_right"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -4294,6 +4416,7 @@ const definitions = [
             romasku.levelMoveRate("switch_level_move_rate", "switch"),
             romasku.relayIndicatorMode("relay_indicator_mode", "relay"),
             romasku.relayIndicator("relay_indicator", "relay"),
+            romasku.relayDetachedMode("relay_detached_mode", "relay"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {

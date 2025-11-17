@@ -49,6 +49,8 @@
 #define ZCL_ATTR_ONOFF_INDICATOR_MODE                   0xff01
 #define ZCL_ATTR_ONOFF_INDICATOR_STATE                  0xff02
 
+#define ZCL_ATTR_ONOFF_DETACHED_RELAY_MODE              0xff03
+
 // OnOff configuration cluster
 
 #define ZCL_ATTR_ONOFF_CONFIGURATION_SWITCH_TYPE                  0x0000
@@ -99,6 +101,9 @@
 #define ZCL_ONOFF_INDICATOR_MODE_SAME                   0x00
 #define ZCL_ONOFF_INDICATOR_MODE_OPPOSITE               0x01
 #define ZCL_ONOFF_INDICATOR_MODE_MANUAL                 0x02
+
+#define ZCL_ONOFF_RELAY_MODE_ATTACHED                   0x00
+#define ZCL_ONOFF_RELAY_MODE_DETACHED                   0x01
 
 // OnOff configuration cluster
 
