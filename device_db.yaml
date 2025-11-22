@@ -435,6 +435,28 @@ BSEED_TOUCH_TS0003:
   info: null
   github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/125
   store: https://www.aliexpress.com/item/1005003475686409.html
+GIRIER_TS0001:
+  human_name: Girier JR-ZDS01 🅱
+  neutral: required
+  device_type: router
+  tuya_model_name: TS0001
+  tuya_manufacturer_name: _TZ3000_zw7yf6yk
+  stock_converter_manufacturer: Girier
+  stock_converter_model: JR-ZDS01
+  override_z2m_device: null
+  zb_module: ZT2S
+  config_str: _TZ3000_zw7yf6yk;TS0001-GIR;BB1u;LC3;SB5u;RD2;
+  alt_config_str: null
+  old_manufacturer_names: null
+  old_zb_models: null
+  tuya_manufacturer_id: 4417
+  tuya_image_type: 54179
+  firmware_image_type: 45585
+  build: yes
+  status: Supported
+  info: null
+  github_issue: https://github.com/romasku/tuya-zigbee-switch/issues/202
+  store: null
 GIRIER_TS0002:
   human_name: Girier 2-gang
   neutral: required
@@ -859,7 +881,9 @@ TUYA_2_TS0001:
   github_issue: null
   store: null
 TUYA_3_TS0001:
-  human_name: Tuya 1-gang
+  human_name: Tuya 1-gang 🅲 <br> Girier JR-ZDS01 🅰
+  category: module
+  power: mains
   neutral: required
   device_type: router
   tuya_model_name: 
