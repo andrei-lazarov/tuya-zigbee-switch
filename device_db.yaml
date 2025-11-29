@@ -1483,20 +1483,20 @@ NOUS_TS0002:
   stock_converter_manufacturer: Tuya
   stock_converter_model: TS0002_basic
   override_z2m_device: L13Z
-  tuya_module: null
+  tuya_module: ZT2S
   mcu_family: Telink
   mcu: TLSR8258
-  config_str: ruxexjfz;TS0001-NS; null;
+  config_str: ruxexjfz;TS0002-NS;BB5u;LB4;SB7u;RD2;SB1u;RC3;
   alt_config_str: null
   old_manufacturer_names: null
   old_zb_models: null
-  tuya_manufacturer_id: 4417
-  tuya_image_type: 54179
+  tuya_manufacturer_id: 4107
+  tuya_image_type: 517
   firmware_image_type: 45582
-  build: no
+  build: yes
   status: in_progress
-  info: Needs pinout
-  threads: null
+  info: Needs pinout confirmation
+  threads: https://github.com/romasku/tuya-zigbee-switch/issues/216
   store: https://nous.technology/product/l13z.html
 OXT_TS0002:
   human_name: OXT 2-gang
