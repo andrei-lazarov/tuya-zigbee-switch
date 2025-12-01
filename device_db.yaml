@@ -36,7 +36,7 @@ AUBESS_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43531
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/18
@@ -62,7 +62,7 @@ AUBESS_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43553
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/pull/153
@@ -88,7 +88,7 @@ AUBESS_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43561
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/pull/151
@@ -117,7 +117,7 @@ AUBESS_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43545
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/66
@@ -143,7 +143,7 @@ AVATTO_TOUCH_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45583
-  build: yes
+  build: no
   status: mostly_supported
   info: Untested. Backlight on C4
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/41
@@ -169,7 +169,7 @@ AVATTO_TOUCH_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45584
-  build: yes
+  build: no
   status: mostly_supported
   info: Untested. Backlight on C4
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/41
@@ -197,7 +197,7 @@ AVATTO_TOUCH_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43542
-  build: yes
+  build: no
   status: mostly_supported
   info: Backlight on C4
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/41
@@ -228,7 +228,7 @@ AVATTO_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43527
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/9
@@ -259,7 +259,7 @@ AVATTO_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43528
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/9
@@ -290,7 +290,7 @@ AVATTO_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43543
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/56
@@ -322,7 +322,7 @@ AVATTO_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43529
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/9
@@ -350,7 +350,7 @@ AVATTO_TS0011:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43537
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/9
@@ -378,7 +378,7 @@ AVATTO_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43530
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/16
@@ -404,7 +404,7 @@ AVATTO_TS0013:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43552
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/135
@@ -430,7 +430,7 @@ BSEED_SOCKET_PM_TS011F:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43556
-  build: yes
+  build: no
   status: in_progress
   info: PM not implemented
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/145
@@ -459,7 +459,7 @@ BSEED_SOCKET_TS011F:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43555
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/145
@@ -486,7 +486,7 @@ BSEED_SWITCH_TS0726_1GANG:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45580
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/157
@@ -515,7 +515,7 @@ BSEED_SWITCH_TS0726_2GANG:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43562
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/157
@@ -544,7 +544,7 @@ BSEED_SWITCH_TS0726_3GANG:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45577
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/157
@@ -573,7 +573,7 @@ BSEED_TOUCH_TS0011:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43564
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/pull/176
@@ -601,7 +601,7 @@ BSEED_TOUCH_1_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43534
-  build: yes
+  build: no
   status: mostly_supported
   info: Pin C3 disables both LEDs ?
   threads: https://github.com/romasku/tuya-zigbee-switch/pull/23
@@ -629,7 +629,7 @@ BSEED_TOUCH_2_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43544
-  build: yes
+  build: no
   status: mostly_supported
   info: Higher power draw (Wrong bi-stable relay implementation)
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/51
@@ -655,7 +655,7 @@ BSEED_TOUCH_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45575
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/pull/186
@@ -681,7 +681,7 @@ BSEED_TOUCH_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45578
-  build: yes
+  build: no
   status: in_progress
   info: Missing state indicator
   threads: https://github.com/romasku/tuya-zigbee-switch/pull/188
@@ -707,7 +707,7 @@ BSEED_TOUCH_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43549
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/125
@@ -733,7 +733,7 @@ EKF_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45592
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/205
@@ -759,7 +759,7 @@ EMOS_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45587
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/199
@@ -787,7 +787,7 @@ EMOS_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45588
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/199
@@ -815,7 +815,7 @@ GIRIER_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45585
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/202
@@ -841,7 +841,7 @@ GIRIER_TS0001_1:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45585
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/212
@@ -869,7 +869,7 @@ GIRIER_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43526
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/29
@@ -895,7 +895,7 @@ GIRIER_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45573
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/183
@@ -924,7 +924,7 @@ GIRIER_TS0013:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43539
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/37
@@ -950,7 +950,7 @@ HOMMYN_TS0011:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45591
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/204
@@ -976,7 +976,7 @@ IHSENO_REMOTE_TS0044:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43563
-  build: yes
+  build: no
   status: in_progress
   info: Huge battery drain! Does not have relays.
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/171
@@ -1004,7 +1004,7 @@ IHSENO_TOUCH_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43557
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/146
@@ -1030,7 +1030,7 @@ IHSENO_TOUCH_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43558
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/146
@@ -1082,7 +1082,7 @@ IHSENO_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43554
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/105
@@ -1137,7 +1137,7 @@ IHSENO_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43546
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/85
@@ -1164,7 +1164,7 @@ IHSENO_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43548
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/105
@@ -1244,7 +1244,7 @@ MHCOZY_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43551
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/130
@@ -1298,7 +1298,7 @@ MOES_SWITCHES_TS0011:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43532
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/14
@@ -1328,7 +1328,7 @@ MOES_SWITCHES_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43510
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/14
@@ -1358,7 +1358,7 @@ MOES_SWITCHES_TS0013:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43533
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/14
@@ -1386,7 +1386,7 @@ MOES_SWITCHES_TS0014:
   tuya_manufacturer_id: 4098
   tuya_image_type: 5634
   firmware_image_type: 43566
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/14
@@ -1414,7 +1414,7 @@ MOES_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43560
-  build: yes
+  build: no
   status: mostly_supported
   info: Has buzzer instead of LED
   threads: https://github.com/romasku/tuya-zigbee-switch/pull/147
@@ -1441,7 +1441,7 @@ MOES_TS0003:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43538
-  build: yes
+  build: no
   status: mostly_supported
   info: Has buzzer on C2
   threads: https://github.com/romasku/tuya-zigbee-switch/pull/30
@@ -1546,7 +1546,7 @@ OXT_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43547
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/49
@@ -1572,7 +1572,7 @@ QS_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45590
-  build: yes
+  build: no
   status: mostly_supported
   info: Bi-stable relays
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/144
@@ -1598,7 +1598,7 @@ TUYA_SWITCH_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45568
-  build: yes
+  build: no
   status: mostly_supported
   info: Needs netled on A0
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/181
@@ -1676,7 +1676,7 @@ TUYA_SWITCH_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 45567
-  build: yes
+  build: no
   status: mostly_supported
   info: Needs netled on A0
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/181
@@ -1729,7 +1729,7 @@ TUYA_1_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43525
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/6
@@ -1756,7 +1756,7 @@ TUYA_2_TS0001:
   tuya_manufacturer_id: 4407
   tuya_image_type: 524
   firmware_image_type: 43522
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: null
@@ -1785,7 +1785,7 @@ TUYA_3_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43535
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: 
@@ -1816,7 +1816,7 @@ TUYA_4_TS0001:
   tuya_manufacturer_id: 4417
   tuya_image_type: 518
   firmware_image_type: 43541
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/44
@@ -1842,7 +1842,7 @@ TUYA_5_TS0001:
   tuya_manufacturer_id: null
   tuya_image_type: null
   firmware_image_type: 45579
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/189
@@ -1869,7 +1869,7 @@ TUYA_TS0002:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43523
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/6
@@ -1896,7 +1896,7 @@ TUYA_TS0004:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43540
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/42
@@ -1923,7 +1923,7 @@ TUYA_TS0011:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43524
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/4
@@ -1949,7 +1949,7 @@ TUYA_TS0011_2:
   tuya_manufacturer_id: 4417
   tuya_image_type: 515
   firmware_image_type: 45576
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/187
@@ -1979,7 +1979,7 @@ TUYA_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43521
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: null
@@ -2007,7 +2007,7 @@ ZEMISMART_SWITCH_1_TS0012:
   tuya_manufacturer_id: 4417
   tuya_image_type: 54179
   firmware_image_type: 43536
-  build: yes
+  build: no
   status: mostly_supported
   info: Untested. Higher power draw (Wrong bi-stable relay implementation)
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/19
@@ -2059,7 +2059,7 @@ ZIGBEE_BOARD_ZTU_2:
   tuya_manufacturer_id: null
   tuya_image_type: null
   firmware_image_type: 45574
-  build: yes
+  build: no
   status: fully_supported
   info: Supported
   threads: null
