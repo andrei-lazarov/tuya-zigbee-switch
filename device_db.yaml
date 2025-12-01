@@ -1788,7 +1788,7 @@ TUYA_2_TS0001:
   threads: null
   store: null
 TUYA_3_TS0001:
-  human_name: Tuya 1-gang 🅲 <br> Girier JR-ZDS01 🅰
+  human_name: Tuya 1-gang 🅲 <br> Girier JR-ZDS01 🅰 <br> Zbeacon TS0001
   category: module
   power: mains
   neutral: required
