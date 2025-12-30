@@ -3139,13 +3139,13 @@ SWITCH_ZEMISMART_TS0601_6GANG:
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/209
   store: https://www.zemismart.com/products/tb26-6
 MODULE_GIRIER_TS130F_2GANG:
-  human_name: Girier TS130F Dual
+  human_name: Girier 2-gang curtains
   category: module
   power: mains
   neutral: required
   device_type: router
-  tuya_model_name: TS130F
-  tuya_manufacturer_name: _TZ3000_j1xl73iw
+  stock_model_name: TS130F
+  stock_manufacturer_name: _TZ3000_j1xl73iw
   stock_converter_manufacturer: Lonsonho
   stock_converter_model: TS130F_dual
   override_z2m_device: TS130F_GIRIER_DUAL
@@ -3156,11 +3156,11 @@ MODULE_GIRIER_TS130F_2GANG:
   alt_config_str: null
   old_manufacturer_names: null
   old_zb_models: null
-  tuya_manufacturer_id: 4417
-  tuya_image_type: 54179
+  stock_manufacturer_id: 4417
+  stock_image_type: 54179
   firmware_image_type: 45597
   build: yes
   status: in_progress
-  info: The on-board button is wired to the same pin as the first switch, so you can't reset the device by pressing the button. You have to press the switch 10 times.
+  info: Curtains not implemented! Reset button on B4 pin, same as switch 
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/270
   store: https://www.aliexpress.com/item/1005003864471089.html
