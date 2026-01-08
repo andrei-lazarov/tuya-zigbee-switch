@@ -1171,7 +1171,7 @@ MODULE_MOES_ZM4LT2_TS0002:
   build: yes
   status: fully_supported
   info: Supported
-  threads: https://github.com/romasku/tuya-zigbee-switch/issues/167
+  threads: https://github.com/romasku/tuya-zigbee-switch/issues/284
   store: https://www.aliexpress.com/item/1005009640015785.html
 MODULE_MOES_ZM4LT3_TS0003:
   human_name: Moes ZM4LT3
