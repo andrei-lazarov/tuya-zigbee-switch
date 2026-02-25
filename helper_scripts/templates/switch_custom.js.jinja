@@ -140,6 +140,15 @@ const romasku = {
             access: "ALL",
             entityCategory: "config",
         }),
+    relayDetachedMode: (name, endpointName) =>
+        enumLookup({
+            name,
+            endpointName,
+            lookup: { attached: 0, detached_always_on: 1, detached_always_off: 2 },
+            cluster: "genOnOff",
+            attribute: { ID: 0xff03, type: 0x10 }, // Boolean
+            description: "Detach physical relay from its virtual state",
+        }),
     networkIndicator: (name, endpointName) =>
         binary({
             name,
@@ -271,6 +280,13 @@ const definitions = [
             {% if device.relayNames %}
             onOff({ endpointNames: {{device.relayNames | tojson }} }),
             {% endif %}
+            {% for relayName in device.relayNames %}
+            romasku.relayDetachedMode("{{relayName}}_detached_mode", "{{relayName}}"),
+            {% endfor %}
+            {% for relayName in device.relayIndicatorNames %}
+            romasku.relayIndicatorMode("{{relayName}}_indicator_mode", "{{relayName}}"),
+            romasku.relayIndicator("{{relayName}}_indicator", "{{relayName}}"),
+            {% endfor %}
             {% for switchName in device.switchNames %}
             romasku.pressAction("{{switchName}}_press_action", "{{switchName}}"),
             romasku.switchMode("{{switchName}}_mode", "{{switchName}}"),
@@ -280,10 +296,6 @@ const definitions = [
             romasku.bindedMode("{{switchName}}_binded_mode", "{{switchName}}"),
             romasku.longPressDuration("{{switchName}}_long_press_duration", "{{switchName}}"),
             romasku.levelMoveRate("{{switchName}}_level_move_rate", "{{switchName}}"),
-            {% endfor %}
-            {% for relayName in device.relayIndicatorNames %}
-            romasku.relayIndicatorMode("{{relayName}}_indicator_mode", "{{relayName}}"),
-            romasku.relayIndicator("{{relayName}}_indicator", "{{relayName}}"),
             {% endfor %}
             {% for coverName in device.coverNames %}
             windowCovering({ 

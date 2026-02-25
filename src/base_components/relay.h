@@ -4,6 +4,7 @@
 #include "hal/gpio.h"
 #include "hal/tasks.h"
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef void (*relay_callback_t)(void *param, uint8_t state);
 
@@ -27,23 +28,29 @@ void relay_init(relay_t *relay);
 
 /**
  * @brief      Turn on relay
- * @param      *relay - Relay to use
+ * @param      *relay                 - Relay to use
+ * @param      update_virtual_state   - Change logic state
+ * @param      update_physical_output - Drive GPIO pins
  * @return     none
  */
-void relay_on(relay_t *relay);
+void relay_on(relay_t *relay, bool update_virtual_state, bool update_physical_output);
 
 /**
  * @brief      Turn off relay
- * @param      *relay - Relay to use
+ * @param      *relay                 - Relay to use
+ * @param      update_virtual_state   - Change logic state
+ * @param      update_physical_output - Drive GPIO pins
  * @return     none
  */
-void relay_off(relay_t *relay);
+void relay_off(relay_t *relay, bool update_virtual_state, bool update_physical_output);
 
 /**
  * @brief      Toggle relay state
- * @param      *relay - Relay to use
+ * @param      *relay                 - Relay to use
+ * @param      update_virtual_state   - Change logic state
+ * @param      update_physical_output - Drive GPIO pins
  * @return     none
  */
-void relay_toggle(relay_t *relay);
+void relay_toggle(relay_t *relay, bool update_virtual_state, bool update_physical_output);
 
 #endif

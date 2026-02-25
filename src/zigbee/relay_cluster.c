@@ -4,6 +4,7 @@
 #include "device_config/nvm_items.h"
 #include "hal/nvm.h"
 #include "hal/printf_selector.h"
+#include <stdbool.h>
 
 hal_zigbee_cmd_result_t relay_cluster_callback(zigbee_relay_cluster *cluster,
                                                uint8_t command_id,
@@ -56,16 +57,18 @@ void relay_cluster_add_to_endpoint(zigbee_relay_cluster *cluster,
                cluster->relay->on);
     SETUP_ATTR(1, ZCL_ATTR_START_UP_ONOFF, ZCL_DATA_TYPE_ENUM8, ATTR_WRITABLE,
                cluster->startup_mode);
+    SETUP_ATTR(2, ZCL_ATTR_ONOFF_DETACHED_RELAY_MODE, ZCL_DATA_TYPE_BOOLEAN, ATTR_WRITABLE,
+               cluster->detached_mode);
     if (cluster->indicator_led != NULL) {
-        SETUP_ATTR(2, ZCL_ATTR_ONOFF_INDICATOR_MODE, ZCL_DATA_TYPE_ENUM8,
+        SETUP_ATTR(3, ZCL_ATTR_ONOFF_INDICATOR_MODE, ZCL_DATA_TYPE_ENUM8,
                    ATTR_WRITABLE, cluster->indicator_led_mode);
-        SETUP_ATTR(3, ZCL_ATTR_ONOFF_INDICATOR_STATE, ZCL_DATA_TYPE_BOOLEAN,
+        SETUP_ATTR(4, ZCL_ATTR_ONOFF_INDICATOR_STATE, ZCL_DATA_TYPE_BOOLEAN,
                    ATTR_WRITABLE, cluster->indicator_state);
     }
 
     endpoint->clusters[endpoint->cluster_count].cluster_id      = ZCL_CLUSTER_ON_OFF;
-    endpoint->clusters[endpoint->cluster_count].attribute_count =
-        cluster->indicator_led != NULL ? 4 : 2;
+    endpoint->clusters[endpoint->cluster_count].attribute_count = cluster->indicator_led !=
+                                                                  NULL ? 5 : 3;
     endpoint->clusters[endpoint->cluster_count].attributes   = cluster->attr_infos;
     endpoint->clusters[endpoint->cluster_count].is_server    = 1;
     endpoint->clusters[endpoint->cluster_count].cmd_callback =
@@ -127,17 +130,41 @@ void sync_indicator_led(zigbee_relay_cluster *cluster) {
 }
 
 void relay_cluster_on(zigbee_relay_cluster *cluster) {
-    relay_on(cluster->relay);
-    sync_indicator_led(cluster);
+    relay_cluster_on_impl(cluster, false);
+}
+
+void relay_cluster_on_physical_only(zigbee_relay_cluster *cluster) {
+    relay_cluster_on_impl(cluster, true);
+}
+
+void relay_cluster_on_impl(zigbee_relay_cluster *cluster, bool physical_only) {
+    if (physical_only) {
+        relay_on(cluster->relay, false, true);
+    } else {
+        relay_on(cluster->relay, true, (cluster->detached_mode == ZCL_ONOFF_RELAY_MODE_ATTACHED));
+        sync_indicator_led(cluster);
+    }
 }
 
 void relay_cluster_off(zigbee_relay_cluster *cluster) {
-    relay_off(cluster->relay);
-    sync_indicator_led(cluster);
+    relay_cluster_off_impl(cluster, false);
+}
+
+void relay_cluster_off_physical_only(zigbee_relay_cluster *cluster) {
+    relay_cluster_off_impl(cluster, true);
+}
+
+void relay_cluster_off_impl(zigbee_relay_cluster *cluster, bool physical_only) {
+    if (physical_only) {
+        relay_off(cluster->relay, false, true);
+    } else {
+        relay_off(cluster->relay, true, (cluster->detached_mode == ZCL_ONOFF_RELAY_MODE_ATTACHED));
+        sync_indicator_led(cluster);
+    }
 }
 
 void relay_cluster_toggle(zigbee_relay_cluster *cluster) {
-    relay_toggle(cluster->relay);
+    relay_toggle(cluster->relay, true, (cluster->detached_mode == ZCL_ONOFF_RELAY_MODE_ATTACHED));
     sync_indicator_led(cluster);
 }
 
@@ -153,7 +180,23 @@ void relay_cluster_on_relay_change(zigbee_relay_cluster *cluster,
 
 void relay_cluster_on_write_attr(zigbee_relay_cluster *cluster,
                                  uint16_t attribute_id) {
-    if (attribute_id == ZCL_ATTR_ONOFF_INDICATOR_STATE) {
+    if (attribute_id == ZCL_ATTR_ONOFF_DETACHED_RELAY_MODE) {
+        switch (cluster->detached_mode) {
+        case ZCL_ONOFF_RELAY_MODE_ATTACHED:
+            if (cluster->relay->on) {
+                relay_cluster_on_physical_only(cluster);
+            } else {
+                relay_cluster_off_physical_only(cluster);
+            }
+            break;
+        case ZCL_ONOFF_RELAY_MODE_DETACHED_ALWAYS_ON:
+            relay_cluster_on_physical_only(cluster);
+            break;
+        case ZCL_ONOFF_RELAY_MODE_DETACHED_ALWAYS_OFF:
+            relay_cluster_off_physical_only(cluster);
+            break;
+        }
+    }else if (attribute_id == ZCL_ATTR_ONOFF_INDICATOR_STATE)  {
         sync_indicator_led(cluster);
     }
     if (cluster->indicator_led_mode != ZCL_ONOFF_INDICATOR_MODE_MANUAL) {
@@ -166,6 +209,7 @@ void relay_cluster_on_write_attr(zigbee_relay_cluster *cluster,
 typedef struct {
     uint8_t on_off;
     uint8_t startup_mode;
+    uint8_t detached_mode;
     uint8_t indicator_led_mode;
     uint8_t indicator_led_on;
 } zigbee_relay_cluster_config;
@@ -175,6 +219,7 @@ static zigbee_relay_cluster_config nv_config_buffer;
 void relay_cluster_store_attrs_to_nv(zigbee_relay_cluster *cluster) {
     nv_config_buffer.on_off             = cluster->relay->on;
     nv_config_buffer.startup_mode       = cluster->startup_mode;
+    nv_config_buffer.detached_mode      = cluster->detached_mode;
     nv_config_buffer.indicator_led_mode = cluster->indicator_led_mode;
     if (cluster->indicator_led != NULL) {
         nv_config_buffer.indicator_led_on = cluster->indicator_state;
@@ -194,6 +239,7 @@ void relay_cluster_load_attrs_from_nv(zigbee_relay_cluster *cluster) {
         return;
 
     cluster->startup_mode       = nv_config_buffer.startup_mode;
+    cluster->detached_mode      = nv_config_buffer.detached_mode;
     cluster->indicator_led_mode = nv_config_buffer.indicator_led_mode;
     cluster->indicator_state    = nv_config_buffer.indicator_led_on;
 }
@@ -205,6 +251,17 @@ void relay_cluster_handle_startup_mode(zigbee_relay_cluster *cluster) {
 
     if (st != HAL_NVM_SUCCESS)
         return;
+
+    switch (cluster->detached_mode) {
+    case ZCL_ONOFF_RELAY_MODE_ATTACHED:
+        break;
+    case ZCL_ONOFF_RELAY_MODE_DETACHED_ALWAYS_ON:
+        relay_cluster_on_physical_only(cluster);
+        break;
+    case ZCL_ONOFF_RELAY_MODE_DETACHED_ALWAYS_OFF:
+        relay_cluster_off_physical_only(cluster);
+        break;
+    }
 
     uint8_t prev_on = nv_config_buffer.on_off;
 

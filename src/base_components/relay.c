@@ -3,6 +3,7 @@
 #include "hal/printf_selector.h"
 #include "hal/tasks.h"
 #include <stddef.h>
+#include <stdbool.h>
 
 #ifndef RELAY_PULSE_MS
 #define RELAY_PULSE_MS    100
@@ -55,59 +56,69 @@ void relay_init(relay_t *relay) {
     }
 }
 
-void relay_on(relay_t *relay) {
+void relay_on(relay_t *relay, bool update_virtual_state, bool update_physical_output) {
     if (relay == NULL) {
         return;
     }
-    printf("relay_on\r\n");
+    printf("relay_on, virtual: %d, physical: %d\r\n", update_virtual_state, update_physical_output);
 
-    relay->on = 1;
-    if (!relay->is_latching) {
-        // Normal relay: drive continuously
-        hal_gpio_write(relay->pin, relay->on_high);
-    } else {
-        // Bi-stable relay
-        relay_end_latching_pulse(relay);
-        hal_tasks_unschedule(&relay->latching_task);
-        relay_start_latching_pulse(relay);
+    if (update_virtual_state) {
+        relay->on = 1;
+        if (relay->on_change != NULL) {
+            relay->on_change(relay->callback_param, 1);
+        }
     }
 
-    if (relay->on_change != NULL) {
-        relay->on_change(relay->callback_param, 1);
+    if (update_physical_output) {
+        if (!relay->is_latching) {
+            // Normal relay: drive continuously
+            hal_gpio_write(relay->pin, relay->on_high);
+        } else {
+            // Bi-stable relay
+            relay_end_latching_pulse(relay);
+            hal_tasks_unschedule(&relay->latching_task);
+            relay_start_latching_pulse(relay);
+        }
     }
 }
 
-void relay_off(relay_t *relay) {
+void relay_off(relay_t *relay, bool update_virtual_state, bool update_physical_output) {
     if (relay == NULL) {
         return;
     }
-    printf("relay_off\r\n");
+    printf("relay_off, virtual: %d, physical: %d\r\n", update_virtual_state,
+           update_physical_output);
 
-    relay->on = 0;
-    if (!relay->is_latching) {
-        // Normal relay:  drive continuously
-        hal_gpio_write(relay->pin, !relay->on_high);
-    } else {
-        // Bi-stable relay
-        relay_end_latching_pulse(relay);
-        hal_tasks_unschedule(&relay->latching_task);
-        relay_start_latching_pulse(relay);
+    if (update_virtual_state) {
+        relay->on = 0;
+        if (relay->on_change != NULL) {
+            relay->on_change(relay->callback_param, 0);
+        }
     }
 
-    if (relay->on_change != NULL) {
-        relay->on_change(relay->callback_param, 0);
+    if (update_physical_output) {
+        if (!relay->is_latching) {
+            // Normal relay:  drive continuously
+            hal_gpio_write(relay->pin, !relay->on_high);
+        } else {
+            // Bi-stable relay
+            relay_end_latching_pulse(relay);
+            hal_tasks_unschedule(&relay->latching_task);
+            relay_start_latching_pulse(relay);
+        }
     }
 }
 
-void relay_toggle(relay_t *relay) {
+void relay_toggle(relay_t *relay, bool update_virtual_state, bool update_physical_output) {
     if (relay == NULL) {
         return;
     }
-    printf("relay_toggle\r\n");
+    printf("relay_toggle, virtual: %d, physical: %d\r\n", update_virtual_state,
+           update_physical_output);
 
     if (relay->on) {
-        relay_off(relay);
+        relay_off(relay, update_virtual_state, update_physical_output);
     } else {
-        relay_on(relay);
+        relay_on(relay, update_virtual_state, update_physical_output);
     }
 }

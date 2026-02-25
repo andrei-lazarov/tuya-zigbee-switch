@@ -9,6 +9,8 @@ Please describe what you are working on:
 ### Features
 
 - Control cover motors (WIP)
+- **Detached relay mode:** Detach physical relay from its virtual state
+  - TODO: Generic Z2M converter, ZHA quirk, homed extension
 
 ### Changes
 

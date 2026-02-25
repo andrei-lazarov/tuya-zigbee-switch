@@ -181,8 +181,9 @@ void parse_config() {
                 relays[relays_cnt].is_latching = 1;
             }
 
-            relay_clusters[relay_clusters_cnt].relay_idx = relay_clusters_cnt;
-            relay_clusters[relay_clusters_cnt].relay     = &relays[relays_cnt];
+            relay_clusters[relay_clusters_cnt].relay_idx     = relay_clusters_cnt;
+            relay_clusters[relay_clusters_cnt].relay         = &relays[relays_cnt];
+            relay_clusters[relay_clusters_cnt].detached_mode = ZCL_ONOFF_RELAY_MODE_ATTACHED;
 
             relays_cnt++;
             relay_clusters_cnt++;

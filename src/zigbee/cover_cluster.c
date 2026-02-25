@@ -46,16 +46,16 @@ void cover_apply_movement(zigbee_cover_cluster *cluster, uint8_t moving) {
 
     cluster->last_switch_time = hal_millis();
     if (moving == ZCL_ATTR_WINDOW_COVERING_MOVING_OPENING) {
-        relay_on(open_relay);
-        relay_off(close_relay);
+        relay_on(open_relay, true, true);
+        relay_off(close_relay, true, true);
         cluster->moving = ZCL_ATTR_WINDOW_COVERING_MOVING_OPENING;
     }else if (moving == ZCL_ATTR_WINDOW_COVERING_MOVING_CLOSING) {
-        relay_off(open_relay);
-        relay_on(close_relay);
+        relay_off(open_relay, true, true);
+        relay_on(close_relay, true, true);
         cluster->moving = ZCL_ATTR_WINDOW_COVERING_MOVING_CLOSING;
     }else {
-        relay_off(open_relay);
-        relay_off(close_relay);
+        relay_off(open_relay, true, true);
+        relay_off(close_relay, true, true);
         cluster->moving = ZCL_ATTR_WINDOW_COVERING_MOVING_STOPPED;
     }
 
