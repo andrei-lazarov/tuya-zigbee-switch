@@ -27,44 +27,11 @@ const definitions = [];
 ********************************************************************/
 
 const tuyaModels = [
-    "FZB-1",
-    "QS-Zigbee-SEC01-U",
-    "QS-Zigbee-SEC02-U",
     "TS0001",
-    "TS0001_power",
-    "TS0001_switch_1_gang",
-    "TS0001_switch_module",
-    "TS0001_switch_module_1",
     "TS0002",
-    "TS0002_basic",
-    "TS0002_limited",
     "TS0003",
-    "TS0003_switch_3_gang",
-    "TS0003_switch_3_gang_with_backlight",
-    "TS0003_switch_module_2",
     "TS0004",
-    "TS0004_switch_module",
-    "TS0004_switch_module_2",
-    "TS0011",
-    "TS0011_switch_module",
-    "TS0012",
-    "TS0012_switch_module",
-    "TS0013",
-    "TS0013_switch_module",
-    "TS0014",
-    "TS0044",
-    "TS011F_plug_1",
-    "TS011F_plug_2",
-    "TS0601_switch_1_gang",
-    "TS0726_1_gang_scene_switch",
-    "TS0726_2_gang_scene_switch",
     "TS0726_3_gang",
-    "TS0726_3_gang_scene_switch",
-    "TS0726_4_gang_scene_switch",
-    "TS130F",
-    "TW-03",
-    "WHD02",
-    "_TZ3000_pgq7ormg",
 ];
 
 for (let definition of tuyaDefinitions) {
@@ -79,8 +46,6 @@ for (let definition of tuyaDefinitions) {
 }
 
 const moesModels = [
-    "SR-ZS",
-    "ZS-EUB_1gang",
 ];
 
 for (let definition of moesDefinitions) {
@@ -95,7 +60,6 @@ for (let definition of moesDefinitions) {
 }
 
 const avattoModels = [
-    "LZWSM16-1",
 ];
 
 for (let definition of avattoDefinitions) {
@@ -110,7 +74,6 @@ for (let definition of avattoDefinitions) {
 }
 
 const girierModels = [
-    "JR-ZDS01",
 ];
 
 for (let definition of girierDefinitions) {
@@ -125,7 +88,6 @@ for (let definition of girierDefinitions) {
 }
 
 const lonsonhoModels = [
-    "TS130F_dual",
 ];
 
 for (let definition of lonsonhoDefinitions) {
