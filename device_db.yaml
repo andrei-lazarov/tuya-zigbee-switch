@@ -4236,8 +4236,8 @@ SWITCH_PSMART_TL_TS0001:
   tuya_module: ZT3L
   mcu_family: Telink
   mcu: TLSR8258
-  config_str: l67wb0p1;TS0001-PST;LC2;SA6u;RB0;IA0;M;
-  alt_config_str: l67wb0p1;TS0001-PST;LC2;SA6u;RA5;IA0i;M;
+  config_str: l67wb0p1;TS0001-PST;LA0;SB7u;RB4;ID2;M;
+  alt_config_str: l67wb0p1;TS0001-PST;LB1;SB7u;RB4;ID2;M;
   old_manufacturer_names: null
   old_zb_models: null
   stock_manufacturer_id: 4417
@@ -4245,7 +4245,7 @@ SWITCH_PSMART_TL_TS0001:
   firmware_image_type: 43636
   build: yes
   status: mostly_supported
-  info: Backlight on A5. If relay is not used, see alt_config.
+  info: Netled A0, Backlight B1
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/252
   store: https://psmart.pl/pl/p/PSMART-Przelacznik-1-obwod-C-RM-ZigBee-TUYA/2053
 SWITCH_PSMART_TL_TS0002:
@@ -4263,8 +4263,8 @@ SWITCH_PSMART_TL_TS0002:
   tuya_module: ZT3L
   mcu_family: Telink
   mcu: TLSR8258
-  config_str: cmgs1zkr;TS0002-PST;LC2;SA3u;RA4;IC0;SB1u;RD1;IC1;M;
-  alt_config_str: cmgs1zkr;TS0002-PST;LC2;SA3u;RA4;IC0;SB1u;RD1;IC1;SB0u;RA5;IA6;M;
+  config_str: cmgs1zkr;TS0002-PST;LA0;SC3u;RC2;ID7;SB5u;RC0;IC4;M;
+  alt_config_str: cmgs1zkr;TS0002-PST;LB1;SC3u;RC2;ID7;SB5u;RC0;IC4;M;
   old_manufacturer_names: null
   old_zb_models: null
   stock_manufacturer_id: 4417
@@ -4272,7 +4272,7 @@ SWITCH_PSMART_TL_TS0002:
   firmware_image_type: 43637
   build: yes
   status: mostly_supported
-  info: Backlight on A5 (3rd relay with alt_config)
+  info: Netled A0, Backlight B1
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/252
   store: https://psmart.pl/pl/p/PSMART-Przelacznik-2-obwody-C-RM-ZigBee-TUYA/2052
 SWITCH_PSMART_SL_TS0001:
