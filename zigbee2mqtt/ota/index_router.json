@@ -1,12 +1,12 @@
 [
   {
-    "fileName": "tlc_switch-1.1.2-b4e22734.zigbee",
-    "fileVersion": 285356036,
+    "fileName": "tlc_switch-1.1.2-91ca41e8.zigbee",
+    "fileVersion": 285356040,
     "fileSize": 178610,
-    "url": "https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/1d8d9dae44d80534485079607c7ea56fab88c418/bin/router/SWITCH_PSMART_TL_TS0001/tlc_switch-1.1.2-b4e22734.zigbee",
+    "url": "https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/refs/heads/db/psmart/bin/router/SWITCH_PSMART_TL_TS0001/tlc_switch-1.1.2-91ca41e8.zigbee",
     "imageType": 43636,
     "manufacturerCode": 4417,
-    "sha512": "644be2e469d7035094896d0dd5c24e4a27bc810099805c8abe3d936790391531ea18d4f6be88267320aa1d3937a5df3831928389744818e6289d50634f084fb6",
+    "sha512": "da5f910d0b2d249cf45e994a44a3e50acc5a2d23762e4b462311841775611a4b70913c2ab3e148a2e41a91c8b7fe226e85258bb51ace4ab4f481787783081b0c",
     "otaHeaderString": "Telink OTA Image\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
     "manufacturerName": [
       "_TZ3000_l67wb0p1",
@@ -14,13 +14,13 @@
     ]
   },
   {
-    "fileName": "tlc_switch-1.1.2-b4e22734-from_tuya.zigbee",
+    "fileName": "tlc_switch-1.1.2-91ca41e8-from_tuya.zigbee",
     "fileVersion": 4294967295,
     "fileSize": 178610,
-    "url": "https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/1d8d9dae44d80534485079607c7ea56fab88c418/bin/router/SWITCH_PSMART_TL_TS0001/tlc_switch-1.1.2-b4e22734-from_tuya.zigbee",
+    "url": "https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/refs/heads/db/psmart/bin/router/SWITCH_PSMART_TL_TS0001/tlc_switch-1.1.2-91ca41e8-from_tuya.zigbee",
     "imageType": 54179,
     "manufacturerCode": 4417,
-    "sha512": "7750c3489362ee73ee02a0c1d3a2801f70889e2fa1668a75b86c89cc517efba8d54c6f2df598ea09810abef5281307b52b7ee6cbcfb901b98dd2e2129868fb28",
+    "sha512": "9271695b7c5b57ee3aa3f539abc45ec4787dca2dacd635ce7b13e7944d3be4055683177f83d5bccd47e6420aa04776a0388934b742172568823f1cedef5f237f",
     "otaHeaderString": "Telink OTA Image\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
     "manufacturerName": [
       "_TZ3000_l67wb0p1",
@@ -28,13 +28,13 @@
     ]
   },
   {
-    "fileName": "tlc_switch-1.1.2-b4e22734.zigbee",
-    "fileVersion": 285356036,
+    "fileName": "tlc_switch-1.1.2-91ca41e8.zigbee",
+    "fileVersion": 285356040,
     "fileSize": 178626,
-    "url": "https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/1d8d9dae44d80534485079607c7ea56fab88c418/bin/router/SWITCH_PSMART_TL_TS0002/tlc_switch-1.1.2-b4e22734.zigbee",
+    "url": "https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/refs/heads/db/psmart/bin/router/SWITCH_PSMART_TL_TS0002/tlc_switch-1.1.2-91ca41e8.zigbee",
     "imageType": 43637,
     "manufacturerCode": 4417,
-    "sha512": "5b21eac31ec798ed1001f2918f6d5f854cc3273119dba0eb03744c055615180741ea2586cdbea33651cc4e142d8b31d583adccd78f72ea188303a51831c5233f",
+    "sha512": "90c3c1ebea35f56f56c29c6c757ae1fb1741be7b04bffbf3e50f4044b7827b348f9d3ef27534d99f313546bb87c605eb7b36fe4e45454fc0c95e4a5995594b25",
     "otaHeaderString": "Telink OTA Image\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
     "manufacturerName": [
       "_TZ3000_cmgs1zkr",
@@ -42,13 +42,13 @@
     ]
   },
   {
-    "fileName": "tlc_switch-1.1.2-b4e22734-from_tuya.zigbee",
+    "fileName": "tlc_switch-1.1.2-91ca41e8-from_tuya.zigbee",
     "fileVersion": 4294967295,
     "fileSize": 178626,
-    "url": "https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/1d8d9dae44d80534485079607c7ea56fab88c418/bin/router/SWITCH_PSMART_TL_TS0002/tlc_switch-1.1.2-b4e22734-from_tuya.zigbee",
+    "url": "https://github.com/andrei-lazarov/tuya-zigbee-switch/raw/refs/heads/db/psmart/bin/router/SWITCH_PSMART_TL_TS0002/tlc_switch-1.1.2-91ca41e8-from_tuya.zigbee",
     "imageType": 54179,
     "manufacturerCode": 4417,
-    "sha512": "a94508fd28ed6e901366713da4f2a390f1a9b247e882f3b3eb261b4ebacb5930dbd437c1a56f9fc7686f36c77dc8f95086d069d935560a399e814b2c7ec70a17",
+    "sha512": "b563b10d57141fa9990f957c21773df6b65fdc6ed85c11259dbe4277861e8fcd348081e90190079d3b838a5e2278945a17c8701c8bcac09467578dd2735574fb",
     "otaHeaderString": "Telink OTA Image\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
     "manufacturerName": [
       "_TZ3000_cmgs1zkr",
