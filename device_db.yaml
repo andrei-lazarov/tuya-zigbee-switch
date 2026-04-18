@@ -3313,7 +3313,7 @@ REMOTE_TUYA_TS0041:
   output: nothing
   device_type: end_device
   stock_model_name: TS0041
-  stock_manufacturer_name: _TZ3000_4upl1fcj
+  stock_manufacturer_name: _TZ3000_4upl1fcj # trace mine
   stock_converter_manufacturer: Tuya
   stock_converter_model: TS0041
   override_z2m_device: Push_LE
