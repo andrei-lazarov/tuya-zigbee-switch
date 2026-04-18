@@ -1,4 +1,23 @@
-# How to Flash via Wire
+*Open the **Outline** (table of contents) from the top right.*  
+
+# Flashing Telink MCUs
+
+Telink microcontrollers can be flashed with UART programmers.  
+⤷ confirmed working: CH340C, FT232RL, PL2303, TB-04
+
+Flashing steps:
+
+1. Power off device
+2. Disassemble device
+3. Connect flasher to microcontroller (3.3V power and data)
+4. Connect flasher to PC
+5. Prepare software
+6. Back-up original firmware
+7. Erase memory
+8. Flash
+9. Test
+
+UART programmers confirmed working: CH340C, FT232RL, PL2303, TB-04 + TLSRPGM
 
 ### What You'll Need
 
